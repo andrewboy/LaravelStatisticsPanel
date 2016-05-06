@@ -1,0 +1,21 @@
+{
+  "name": "andrewboy/laravel-statistics-panel",
+  "description": "Laravel package for statistics panel.",
+  "keywords": ["laravel", "google", "statistics", "panel"],
+  "authors": [
+    {
+      "name": "Beck András",
+      "email": "andras.jozsef.beck@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9",
+    "illuminate/support": ">5.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "Andrewboy\\LaravelStatisticsPanel": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
