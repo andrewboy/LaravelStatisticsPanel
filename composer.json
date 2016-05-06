@@ -17,5 +17,5 @@
       "Andrewboy\\LaravelStatisticsPanel": "src/"
     }
   },
-  "minimum-stability": "dev"
+  "minimum-stability": "alpha"
 }
