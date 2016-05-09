@@ -55,6 +55,11 @@ class LaravelStatisticsPanelServiceProvider extends ServiceProvider
             'laravel-statistics-panel-adminlte-box-headers'
         );
 
+        $this->loadViewsFrom(
+            $resourcesDir.'/views/laravel_statistics_panel/adminlte/widgets',
+            'laravel-statistics-panel-adminlte-widgets'
+        );
+
         $this->publishes([
             $resourcesDir .'/views/laravel_statistics_panel/' => base_path('resources/views/vendor/laravel-statistics-panel')
         ]);
