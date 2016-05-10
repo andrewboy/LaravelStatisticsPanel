@@ -1,4 +1,4 @@
-var statistics_panel = {};
+window.statistics_panel = {};
 
 statistics_panel.widgets = (function(){
     function Widget(id, colors, options) {
@@ -715,8 +715,9 @@ statistics_panel.widgets = (function(){
         ToplistWidget: ToplistWidget,
         MapToplist: MapToplist,
         BarChartWidget: BarChartWidget,
-        extend: function (modules) {
-            $.extend(this, modules);
-        }
     };
 }());
+
+statistics_panel.widgets.extend = function (modules) {
+    $.extend(statistics_panel.widgets, modules);
+};
