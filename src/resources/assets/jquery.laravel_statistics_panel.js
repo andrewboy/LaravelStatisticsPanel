@@ -35,6 +35,6 @@ statistics_panel.widgets = (function(){
     };
 }());
 
-statistics_panel.widgets.extend = function (modules) {
+window.statistics_panel.widgets.extend = function (modules) {
     $.extend(statistics_panel.widgets, modules);
 };

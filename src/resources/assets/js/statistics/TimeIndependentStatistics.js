@@ -51,38 +51,3 @@ TimeIndependentStatistics.prototype.fetchDatas = function () {
         self.updateWidgets(data);
     });
 };
-
-//var NS = {};
-//
-//NS.ez = (function() {
-//
-//    var Ez = function(text) {
-//        this.text = text;
-//    };
-//
-//    Ez.prototype.printTxt = function() {
-//        console.log(this.text);
-//    };
-//
-//    return {
-//        Ez: Ez
-//    };
-//}());
-//
-//$.extend(NS.ez, (function(){
-//    return {
-//        Titi: 'gege'
-//    };
-//}()));
-//
-//console.log(NS.ez);
-//
-//var de = new NS.ez.Ez('hehe');
-//
-//de.printTxt();
-//
-//var de2 = new NS.ez.Ez('haha');
-//
-//de2.printTxt();
-//
-//de.printTxt();
