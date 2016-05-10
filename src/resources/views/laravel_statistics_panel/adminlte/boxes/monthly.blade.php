@@ -1,4 +1,7 @@
-@extends('laravel-statistics-panel-adminlte-boxes::box')
+@extends('laravel-statistics-panel-adminlte-boxes::box', [
+    'statBoxId'     =>  isset($statBoxId) ? $statBoxId : null,
+    'statBoxClass'  =>  isset($statBoxClass) ? $statBoxClass : null,
+])
 
 @section('statistics_box_header')
 
