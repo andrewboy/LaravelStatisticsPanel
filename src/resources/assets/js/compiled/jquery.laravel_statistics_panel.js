@@ -715,6 +715,8 @@ statistics_panel.widgets = (function(){
         ToplistWidget: ToplistWidget,
         MapToplist: MapToplist,
         BarChartWidget: BarChartWidget,
+        extend: function (modules) {
+            $.extend(this, modules);
+        }
     };
 }());
-
