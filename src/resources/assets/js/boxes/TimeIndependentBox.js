@@ -1,11 +1,11 @@
-function TimeIndependentStatistics(context, source, widgetTypes) {
+function TimeIndependentBox(context, source, widgetTypes) {
     this.widgetContainer = {};
     this.context = context;
     this.source = source;
     this.widgetTypes = widgetTypes;
 }
 
-TimeIndependentStatistics.prototype.init = function () {
+TimeIndependentBox.prototype.init = function () {
     var obj = this;
     $('.stat-widget', this.context).each(function (i, item) {
         obj.setWidget($(item));
@@ -14,7 +14,7 @@ TimeIndependentStatistics.prototype.init = function () {
     this.boot();
 };
 
-TimeIndependentStatistics.prototype.boot = function () {
+TimeIndependentBox.prototype.boot = function () {
     $('.stat-widget', this.context).each(function (i, item) {
         $(item).data('widget').setLoadIcon(true);
     });
@@ -22,7 +22,7 @@ TimeIndependentStatistics.prototype.boot = function () {
     this.fetchDatas();
 };
 
-TimeIndependentStatistics.prototype.updateWidgets = function (data) {
+TimeIndependentBox.prototype.updateWidgets = function (data) {
     var id,
         statWidgets = $('.stat-widget', this.context);
 
@@ -36,13 +36,13 @@ TimeIndependentStatistics.prototype.updateWidgets = function (data) {
     }
 };
 
-TimeIndependentStatistics.prototype.setWidget = function ($item) {
+TimeIndependentBox.prototype.setWidget = function ($item) {
     var id = $item.data('statId');
 
     $item.data('widget', this.widgetTypes[$item.data('type')].init($item));
 };
 
-TimeIndependentStatistics.prototype.fetchDatas = function () {
+TimeIndependentBox.prototype.fetchDatas = function () {
     var self = this;
     $.ajax({
         type: 'GET',

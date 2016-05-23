@@ -38,3 +38,12 @@ statistics_panel.widgets = (function(){
 window.statistics_panel.widgets.extend = function (modules) {
     $.extend(statistics_panel.widgets, modules);
 };
+
+
+statistics_panel.boxes = (function(){
+    //=require js/boxes/TimeIndependentBox.js
+
+    return {
+        TimeIndependentBox: TimeIndependentBox,
+    };
+}());

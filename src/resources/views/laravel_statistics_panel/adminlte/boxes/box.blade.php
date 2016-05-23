@@ -1,4 +1,4 @@
-<div id="{{ $id or '' }}" class="box box-solid {{ $class or '' }}">
+<div id="{{ $statBoxId or '' }}" class="box box-solid {{ $statBoxClass or '' }}">
     <div class="box-header with-border">
         @yield('statistics_box_header')
     </div>
