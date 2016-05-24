@@ -1,8 +1,8 @@
-function TimeIndependentBox(context, source, widgetTypes) {
-    this.widgetContainer = {};
+function TimeIndependentBox(context, source/*, widgetTypes*/) {
+    //this.widgetContainer = {};
     this.context = context;
     this.source = source;
-    this.widgetTypes = widgetTypes;
+    //this.widgetTypes = widgetTypes;
 }
 
 TimeIndependentBox.prototype.init = function () {
@@ -30,7 +30,7 @@ TimeIndependentBox.prototype.updateWidgets = function (data) {
         var $stat = statWidgets.filter('[data-stat-id="' + id + '"]');
 
         if ($stat.length > 0) {
-            $stat.data('widget').update(this.widgetContainer[id], data[id]);
+            $stat.data('widget').update(data[id]);
             $stat.data('widget').setLoadIcon(false);
         }
     }
@@ -39,7 +39,10 @@ TimeIndependentBox.prototype.updateWidgets = function (data) {
 TimeIndependentBox.prototype.setWidget = function ($item) {
     var id = $item.data('statId');
 
-    $item.data('widget', this.widgetTypes[$item.data('type')].init($item));
+    var widget = window.statistics_panel.stat_widgets[$item.data('type')];
+    widget.init($item);
+
+    $item.data('widget', widget.widget);
 };
 
 TimeIndependentBox.prototype.fetchDatas = function () {

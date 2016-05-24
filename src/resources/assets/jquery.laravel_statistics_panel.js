@@ -1,6 +1,6 @@
 window.statistics_panel = {};
 
-statistics_panel.widgets = (function(){
+statistics_panel.widgets = (function () {
     //=require js/widgets/Widget.js
 
     //=require js/widgets/ChartWidget.js
@@ -35,15 +35,22 @@ statistics_panel.widgets = (function(){
     };
 }());
 
-window.statistics_panel.widgets.extend = function (modules) {
-    $.extend(statistics_panel.widgets, modules);
-};
+//window.statistics_panel.widgets.extend = function (modules) {
+//    $.extend(statistics_panel.widgets, modules);
+//};
 
-
-window.statistics_panel.boxes = (function(){
+window.statistics_panel.boxes = (function () {
     //=require js/boxes/TimeIndependentBox.js
 
     return {
         TimeIndependentBox: TimeIndependentBox,
+    };
+}());
+
+window.statistics_panel.stat_widgets = (function () {
+    //=require js/stat_widgets/StatGoalCompletionWidget.js
+
+    return {
+        StatGoalCompletionWidget: StatGoalCompletionWidget,
     };
 }());

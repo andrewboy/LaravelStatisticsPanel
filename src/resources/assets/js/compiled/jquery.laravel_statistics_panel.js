@@ -1,6 +1,6 @@
 window.statistics_panel = {};
 
-statistics_panel.widgets = (function(){
+statistics_panel.widgets = (function () {
     function Widget(id, colors, options) {
         "use strict";
     
@@ -718,17 +718,16 @@ statistics_panel.widgets = (function(){
     };
 }());
 
-window.statistics_panel.widgets.extend = function (modules) {
-    $.extend(statistics_panel.widgets, modules);
-};
+//window.statistics_panel.widgets.extend = function (modules) {
+//    $.extend(statistics_panel.widgets, modules);
+//};
 
-
-window.statistics_panel.boxes = (function(){
-    function TimeIndependentBox(context, source, widgetTypes) {
-        this.widgetContainer = {};
+window.statistics_panel.boxes = (function () {
+    function TimeIndependentBox(context, source/*, widgetTypes*/) {
+        //this.widgetContainer = {};
         this.context = context;
         this.source = source;
-        this.widgetTypes = widgetTypes;
+        //this.widgetTypes = widgetTypes;
     }
     
     TimeIndependentBox.prototype.init = function () {
@@ -756,7 +755,7 @@ window.statistics_panel.boxes = (function(){
             var $stat = statWidgets.filter('[data-stat-id="' + id + '"]');
     
             if ($stat.length > 0) {
-                $stat.data('widget').update(this.widgetContainer[id], data[id]);
+                $stat.data('widget').update(data[id]);
                 $stat.data('widget').setLoadIcon(false);
             }
         }
@@ -765,7 +764,10 @@ window.statistics_panel.boxes = (function(){
     TimeIndependentBox.prototype.setWidget = function ($item) {
         var id = $item.data('statId');
     
-        $item.data('widget', this.widgetTypes[$item.data('type')].init($item));
+        var widget = window.statistics_panel.stat_widgets[$item.data('type')];
+        widget.init($item);
+    
+        $item.data('widget', widget.widget);
     };
     
     TimeIndependentBox.prototype.fetchDatas = function () {
@@ -780,5 +782,30 @@ window.statistics_panel.boxes = (function(){
 
     return {
         TimeIndependentBox: TimeIndependentBox,
+    };
+}());
+
+window.statistics_panel.stat_widgets = (function () {
+    function StatGoalCompletionWidget (id) {
+        this.id = id;
+        this.widget = null;
+    
+        window.statistics_panel.widgets.GoalCompletionWidget.apply(this, Array.prototype.slice.call(arguments));
+    }
+    
+    StatGoalCompletionWidget.prototype = new  window.statistics_panel.widgets.GoalCompletionWidget();
+    
+    StatGoalCompletionWidget.prototype.init = function () {
+    
+    };
+    
+    StatGoalCompletionWidget.prototype.update = function (data) {
+        this.widget.setPercent(data.percent);
+        this.widget.setDescription(data.description);
+        this.widget.setValue(data.reached);
+    };
+
+    return {
+        StatGoalCompletionWidget: StatGoalCompletionWidget,
     };
 }());
