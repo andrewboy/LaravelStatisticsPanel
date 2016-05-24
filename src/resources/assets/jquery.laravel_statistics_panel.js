@@ -40,7 +40,7 @@ window.statistics_panel.widgets.extend = function (modules) {
 };
 
 
-statistics_panel.boxes = (function(){
+window.statistics_panel.boxes = (function(){
     //=require js/boxes/TimeIndependentBox.js
 
     return {

@@ -723,7 +723,7 @@ window.statistics_panel.widgets.extend = function (modules) {
 };
 
 
-statistics_panel.boxes = (function(){
+window.statistics_panel.boxes = (function(){
     function TimeIndependentBox(context, source, widgetTypes) {
         this.widgetContainer = {};
         this.context = context;
@@ -777,7 +777,6 @@ statistics_panel.boxes = (function(){
             self.updateWidgets(data);
         });
     };
-    
 
     return {
         TimeIndependentBox: TimeIndependentBox,
