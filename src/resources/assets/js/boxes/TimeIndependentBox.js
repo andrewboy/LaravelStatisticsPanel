@@ -40,7 +40,7 @@ TimeIndependentBox.prototype.setWidget = function ($item) {
     var widget = new window.statistics_panel.stat_widgets[$item.data('type')]($item);
     widget.init($item);
 
-    $item.data('widget', widget.widget);
+    $item.data('widget', widget);
 };
 
 TimeIndependentBox.prototype.fetchDatas = function () {
