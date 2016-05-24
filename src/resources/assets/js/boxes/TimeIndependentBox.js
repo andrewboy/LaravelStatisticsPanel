@@ -1,8 +1,6 @@
-function TimeIndependentBox(context, source/*, widgetTypes*/) {
-    //this.widgetContainer = {};
+function TimeIndependentBox(context, source) {
     this.context = context;
     this.source = source;
-    //this.widgetTypes = widgetTypes;
 }
 
 TimeIndependentBox.prototype.init = function () {
@@ -39,7 +37,7 @@ TimeIndependentBox.prototype.updateWidgets = function (data) {
 TimeIndependentBox.prototype.setWidget = function ($item) {
     var id = $item.data('statId');
 
-    var widget = window.statistics_panel.stat_widgets[$item.data('type')];
+    var widget = new window.statistics_panel.stat_widgets[$item.data('type')]($item);
     widget.init($item);
 
     $item.data('widget', widget.widget);
