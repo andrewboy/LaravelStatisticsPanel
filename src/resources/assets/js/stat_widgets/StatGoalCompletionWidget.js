@@ -1,6 +1,5 @@
 function StatGoalCompletionWidget (id) {
     this.id = id;
-    this.widget = null;
 
     window.statistics_panel.widgets.GoalCompletionWidget.apply(this, Array.prototype.slice.call(arguments));
 }
@@ -12,7 +11,7 @@ StatGoalCompletionWidget.prototype.init = function () {
 };
 
 StatGoalCompletionWidget.prototype.update = function (data) {
-    this.widget.setPercent(data.percent);
-    this.widget.setDescription(data.description);
-    this.widget.setValue(data.reached);
+    this.setPercent(data.percent);
+    this.setDescription(data.description);
+    this.setValue(data.reached);
 };
