@@ -7,11 +7,11 @@
             <input name="stat_interval_from"
                    class="form-control pull-right stat_interval from"
                    type="text"
-                   value="{{ $actualMonthDate or '2016-05' }}">
+                   value="{{ $statBoxActualMonthDate or '' }}">
         </div>
     </div>
     <div class="col-md-9">
-        <h3 class="box-title stat-title">@lang('month_statistics')</h3>
+        <h3 class="box-title stat-title">{{ $statBoxTitle or '' }}</h3>
     </div>
     <div class="col-md-1">
         <div class="box-tools pull-right">
