@@ -5,7 +5,7 @@
 
 @section('statistics_box_header')
 
-    @include('laravel-statistics-panel-adminlte-box-headers::time_independent', [
+    @include('laravel-statistics-panel-adminlte-box-headers::month_interval', [
         'statBoxTitle'  =>  isset($statBoxTitle) ? $statBoxTitle : null,
         'statBoxActualMonthDateFrom'    =>  isset($statBoxActualMonthDateFrom) ? $statBoxActualMonthDateFrom : null,
         'statBoxActualMonthDateTo'    =>  isset($statBoxActualMonthDateTo) ? $statBoxActualMonthDateTo : null,
