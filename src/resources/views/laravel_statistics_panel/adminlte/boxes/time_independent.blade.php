@@ -7,14 +7,12 @@
 
     @include('laravel-statistics-panel-adminlte-box-headers::time_independent', [
         'statBoxTitle'  =>  isset($statBoxTitle) ? $statBoxTitle : null,
-        'statBoxActualMonthDateFrom'    =>  isset($statBoxActualMonthDateFrom) ? $statBoxActualMonthDateFrom : null,
-        'statBoxActualMonthDateTo'    =>  isset($statBoxActualMonthDateTo) ? $statBoxActualMonthDateTo : null,
     ])
 
-@overwrite
+@stop
 
 @section('statistics_box_content')
 
     @yield('statistics_box_content')
 
-@overwrite
+@stop
