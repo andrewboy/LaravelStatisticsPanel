@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-11">
         <h3 class="box-title stat-title">{{ $statBoxTitle or '' }}</h3>
     </div>
     <div class="col-md-1">
