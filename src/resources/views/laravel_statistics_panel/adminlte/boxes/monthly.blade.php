@@ -10,10 +10,10 @@
         'statBoxActualMonthDate'    =>  isset($statBoxActualMonthDate) ? $statBoxActualMonthDate : null,
     ])
 
-@stop
+@overwrite
 
 @section('statistics_box_content')
 
     @yield('statistics_box_content')
 
-@stop
+@overwrite
