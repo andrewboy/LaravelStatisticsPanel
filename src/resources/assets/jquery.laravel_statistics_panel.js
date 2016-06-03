@@ -2,23 +2,14 @@ window.statistics_panel = {};
 
 statistics_panel.widgets = (function () {
     //=require js/widgets/Widget.js
-
     //=require js/widgets/ChartWidget.js
-
     //=require js/widgets/GridWidget.js
-
     //=require js/widgets/BoxWidget.js
-
     //=require js/widgets/DoughnutChartWidget.js
-
     //=require js/widgets/GoalCompletionWidget.js
-
     //=require js/widgets/LineChartWidget.js
-
     //=require js/widgets/ToplistWidget.js
-
     //=require js/widgets/MapToplist.js
-
     //=require js/widgets/BarChartWidget.js
 
     return {
@@ -40,10 +31,14 @@ statistics_panel.widgets = (function () {
 //};
 
 window.statistics_panel.boxes = (function () {
+    //=require js/boxes/StatisticsBox.js
     //=require js/boxes/TimeIndependentBox.js
+    //=require js/boxes/MonthlyBox.js
 
     return {
+        StatisticsBox: StatisticsBox,
         TimeIndependentBox: TimeIndependentBox,
+        MonthlyBox: MonthlyBox,
     };
 }());
 
