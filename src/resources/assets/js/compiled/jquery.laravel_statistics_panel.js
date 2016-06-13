@@ -1,6 +1,6 @@
 window.statistics_panel = {};
 
-statistics_panel.widgets = (function () {
+window.statistics_panel.widgets = (function () {
     function Widget(id, colors, options) {
         "use strict";
     
