@@ -34,11 +34,13 @@ window.statistics_panel.boxes = (function () {
     //=require js/boxes/StatisticsBox.js
     //=require js/boxes/TimeIndependentBox.js
     //=require js/boxes/MonthlyBox.js
+    //=require js/boxes/MonthIntervalBox.js
 
     return {
         StatisticsBox: StatisticsBox,
         TimeIndependentBox: TimeIndependentBox,
         MonthlyBox: MonthlyBox,
+        MonthInterval: MonthIntervalBox,
     };
 }());
 
