@@ -13,11 +13,13 @@ StatisticsBox.prototype.init = function () {
 };
 
 StatisticsBox.prototype.boot = function () {
-    $('.stat-widget', this.context).each(function (i, item) {
-        $(item).data('widget').setLoadIcon(true);
-    });
-
     this.fetchDatas();
+};
+
+StatisticsBox.prototype.setLoadIcons = function (isLoading) {
+    $('.stat-widget', this.context).each(function (i, item) {
+        $(item).data('widget').setLoadIcon(isLoading);
+    });
 };
 
 StatisticsBox.prototype.updateWidgets = function (data) {
@@ -45,6 +47,9 @@ StatisticsBox.prototype.setWidget = function ($item) {
 
 StatisticsBox.prototype.fetchDatas = function () {
     var self = this;
+
+    this.setLoadIcons(true);
+
     $.ajax({
         type: 'GET',
         url: self.source

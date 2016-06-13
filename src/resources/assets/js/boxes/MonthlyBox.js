@@ -19,37 +19,11 @@ function MonthlyBox(context, source) {
 MonthlyBox.prototype = new StatisticsBox();
 
 StatisticsBox.prototype.fetchDatas = function () {
-    //var self = this;
-    //$.ajax({
-    //    type: 'GET',
-    //    url: self.source
-    //}).done(function (data) {
-    //    self.updateWidgets(data);
-    //});
-
-    //==============
-
-    //var self = this;
-    //
-    //$('input.stat_interval', this.context).datepicker({
-    //    format: "yyyy/mm",
-    //    startView: "months",
-    //    minViewMode: "months",
-    //    autoclose: true
-    //}).on('changeDate', function () {
-    //    self.onDateChange();
-    //});
-    //
-    //$('input.stat_interval', this.context).first().trigger('changeDate');
-
-    var self = this, i, params,
+    var self = this,
+        params,
         dateFromParams = $('input.stat_interval.from', this.context).val().split("/");
 
-    for (i in this.widgetContainer) {
-        if (this.widgetContainer.hasOwnProperty(i)) {
-            this.widgetContainer[i].setLoadIcon(true);
-        }
-    }
+    this.setLoadIcons(true);
 
     params = {
         'in': {
