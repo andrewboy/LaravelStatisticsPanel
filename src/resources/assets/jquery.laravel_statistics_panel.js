@@ -1,6 +1,6 @@
 window.statistics_panel = {};
 
-statistics_panel.widgets = (function () {
+window.statistics_panel.widgets = (function () {
     //=require js/widgets/Widget.js
     //=require js/widgets/ChartWidget.js
     //=require js/widgets/GridWidget.js

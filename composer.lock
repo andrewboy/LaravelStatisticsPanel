@@ -368,12 +368,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "7842c4fab65e32f23ecb0137b18331a00d195f4c"
+                "reference": "1bd59e5df1241349fe9362309b82e86a6a312155"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/7842c4fab65e32f23ecb0137b18331a00d195f4c",
-                "reference": "7842c4fab65e32f23ecb0137b18331a00d195f4c",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/1bd59e5df1241349fe9362309b82e86a6a312155",
+                "reference": "1bd59e5df1241349fe9362309b82e86a6a312155",
                 "shasum": ""
             },
             "require": {
@@ -489,7 +489,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-05-19 02:02:44"
+            "time": "2016-05-28 21:16:16"
         },
         {
             "name": "league/flysystem",
@@ -580,12 +580,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "ba9d57a96b3a2499599b2ca93a32f3ed955b269c"
+                "reference": "39aeecefaeacb43b7315399f37aee63b34930ec1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/ba9d57a96b3a2499599b2ca93a32f3ed955b269c",
-                "reference": "ba9d57a96b3a2499599b2ca93a32f3ed955b269c",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/39aeecefaeacb43b7315399f37aee63b34930ec1",
+                "reference": "39aeecefaeacb43b7315399f37aee63b34930ec1",
                 "shasum": ""
             },
             "require": {
@@ -650,7 +650,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-05-20 19:14:51"
+            "time": "2016-05-26 21:44:25"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -1020,12 +1020,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "c723ceb8d7303861d5fc788f0c406d5922e69d31"
+                "reference": "d6280ed81e44e321e64389b8d80f249a1e7d5f3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/c723ceb8d7303861d5fc788f0c406d5922e69d31",
-                "reference": "c723ceb8d7303861d5fc788f0c406d5922e69d31",
+                "url": "https://api.github.com/repos/symfony/console/zipball/d6280ed81e44e321e64389b8d80f249a1e7d5f3d",
+                "reference": "d6280ed81e44e321e64389b8d80f249a1e7d5f3d",
                 "shasum": ""
             },
             "require": {
@@ -1071,7 +1071,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-05-13 15:28:37"
+            "time": "2016-05-26 08:21:12"
         },
         {
             "name": "symfony/css-selector",
@@ -1353,12 +1353,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "091797cfe632b8c9a56801b5ccc447502543eef6"
+                "reference": "b9b463f5386bd5f4ae2df2c6eb26682ec4354c96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/091797cfe632b8c9a56801b5ccc447502543eef6",
-                "reference": "091797cfe632b8c9a56801b5ccc447502543eef6",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/b9b463f5386bd5f4ae2df2c6eb26682ec4354c96",
+                "reference": "b9b463f5386bd5f4ae2df2c6eb26682ec4354c96",
                 "shasum": ""
             },
             "require": {
@@ -1401,7 +1401,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-05-13 15:31:27"
+            "time": "2016-06-02 09:40:24"
         },
         {
             "name": "symfony/http-kernel",
@@ -1409,12 +1409,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "cea62c83a012a3213093a43b2aa2e72884c14d85"
+                "reference": "298c80b16a5154d58b154cdbb05a1f59270063c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/cea62c83a012a3213093a43b2aa2e72884c14d85",
-                "reference": "cea62c83a012a3213093a43b2aa2e72884c14d85",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/298c80b16a5154d58b154cdbb05a1f59270063c8",
+                "reference": "298c80b16a5154d58b154cdbb05a1f59270063c8",
                 "shasum": ""
             },
             "require": {
@@ -1483,7 +1483,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2016-05-09 21:42:27"
+            "time": "2016-06-03 07:48:37"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1491,12 +1491,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "dff51f72b0706335131b00a7f49606168c582594"
+                "reference": "67f0d2b927796648c5c38cedb7a2c8f1cf14e7dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/dff51f72b0706335131b00a7f49606168c582594",
-                "reference": "dff51f72b0706335131b00a7f49606168c582594",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/67f0d2b927796648c5c38cedb7a2c8f1cf14e7dc",
+                "reference": "67f0d2b927796648c5c38cedb7a2c8f1cf14e7dc",
                 "shasum": ""
             },
             "require": {
@@ -1542,7 +1542,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-05-18 14:26:46"
+            "time": "2016-05-26 01:13:28"
         },
         {
             "name": "symfony/polyfill-php56",
@@ -1707,12 +1707,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
-                "reference": "07c44ac73b42f7c6123fc024ccab03a36e87a2cc"
+                "reference": "ad60d48d322ad87a1dcce40b38a611b0f6709909"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/07c44ac73b42f7c6123fc024ccab03a36e87a2cc",
-                "reference": "07c44ac73b42f7c6123fc024ccab03a36e87a2cc",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/ad60d48d322ad87a1dcce40b38a611b0f6709909",
+                "reference": "ad60d48d322ad87a1dcce40b38a611b0f6709909",
                 "shasum": ""
             },
             "require": {
@@ -1773,7 +1773,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2016-04-28 10:50:58"
+            "time": "2016-05-30 06:56:59"
         },
         {
             "name": "symfony/translation",
@@ -2005,12 +2005,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "a956a371e5912dcdff2f66cb75ad89bfb6756963"
+                "reference": "8df3e3144b44a77595573680f494597c642fc556"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/a956a371e5912dcdff2f66cb75ad89bfb6756963",
-                "reference": "a956a371e5912dcdff2f66cb75ad89bfb6756963",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/8df3e3144b44a77595573680f494597c642fc556",
+                "reference": "8df3e3144b44a77595573680f494597c642fc556",
                 "shasum": ""
             },
             "require": {
@@ -2051,7 +2051,8 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2016-05-23 19:58:34"
+            "abandoned": "friendsofphp/php-cs-fixer",
+            "time": "2016-05-28 01:21:43"
         },
         {
             "name": "laravel/laravel",
@@ -2152,12 +2153,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "7ca4182b3acbd19ebbf3ced4dfee12487d9c05aa"
+                "reference": "f9a8140d6cf86514a64fb3b637e716008e1885d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/7ca4182b3acbd19ebbf3ced4dfee12487d9c05aa",
-                "reference": "7ca4182b3acbd19ebbf3ced4dfee12487d9c05aa",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/f9a8140d6cf86514a64fb3b637e716008e1885d0",
+                "reference": "f9a8140d6cf86514a64fb3b637e716008e1885d0",
                 "shasum": ""
             },
             "require": {
@@ -2206,7 +2207,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2016-05-09 09:25:40"
+            "time": "2016-05-27 08:33:35"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -2457,12 +2458,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "fc1d8cd5b5de11625979125c5639347896ac2c74"
+                "reference": "a5ac26949333820deb64c07c35f7e0ec5f79f34e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fc1d8cd5b5de11625979125c5639347896ac2c74",
-                "reference": "fc1d8cd5b5de11625979125c5639347896ac2c74",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a5ac26949333820deb64c07c35f7e0ec5f79f34e",
+                "reference": "a5ac26949333820deb64c07c35f7e0ec5f79f34e",
                 "shasum": ""
             },
             "require": {
@@ -2521,7 +2522,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-05-17 03:09:28"
+            "time": "2016-06-02 09:44:05"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -3055,12 +3056,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "641bbd0fc1b671f896f7815169587dced3588f5c"
+                "reference": "737c6a22a9a2f6ac3d4c62a0b97720e139c4a093"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/641bbd0fc1b671f896f7815169587dced3588f5c",
-                "reference": "641bbd0fc1b671f896f7815169587dced3588f5c",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/737c6a22a9a2f6ac3d4c62a0b97720e139c4a093",
+                "reference": "737c6a22a9a2f6ac3d4c62a0b97720e139c4a093",
                 "shasum": ""
             },
             "require": {
@@ -3096,7 +3097,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-05-14 15:06:20"
+            "time": "2016-05-29 09:50:57"
         }
     ],
     "aliases": [],
