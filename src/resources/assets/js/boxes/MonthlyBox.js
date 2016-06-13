@@ -2,10 +2,10 @@ function MonthlyBox(context, source) {
     this.context = context;
     this.source = source;
 
-    window.statistics_panel.boxes.StatisticsBox.apply(this, Array.prototype.slice.call(arguments));
+    StatisticsBox.apply(this, Array.prototype.slice.call(arguments));
 }
 
-MonthlyBox.prototype = new  window.statistics_panel.boxes.StatisticsBox();
+MonthlyBox.prototype = new StatisticsBox();
 
 StatisticsBox.prototype.fetchDatas = function () {
     //var self = this;
