@@ -20,7 +20,7 @@ function MonthlyBox(context, source) {
 
 MonthlyBox.inheritsFrom(StatisticsBox);
 
-StatisticsBox.prototype.fetchDatas = function () {
+MonthlyBox.prototype.fetchDatas = function () {
     var self = this,
         params,
         dateFromParams = $('input.stat_interval.from', this.context).val().split("/");

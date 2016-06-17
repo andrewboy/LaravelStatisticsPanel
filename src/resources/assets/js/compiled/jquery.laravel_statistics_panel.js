@@ -1,3 +1,18 @@
+Function.prototype.inheritsFrom = function( parentClassOrObject ){
+    if ( parentClassOrObject.constructor == Function ){
+        //Normal Inheritance
+        this.prototype = new parentClassOrObject;
+        this.prototype.constructor = this;
+        this.prototype.parent = parentClassOrObject.prototype;
+    } else {
+        //Pure Virtual Inheritance
+        this.prototype = parentClassOrObject;
+        this.prototype.constructor = this;
+        this.prototype.parent = parentClassOrObject;
+    }
+    return this;
+};
+
 window.statistics_panel = {};
 
 window.statistics_panel.widgets = (function () {
@@ -392,21 +407,6 @@ window.statistics_panel.widgets = (function () {
 //};
 
 window.statistics_panel.boxes = (function () {
-    Function.prototype.inheritsFrom = function( parentClassOrObject ){
-        if ( parentClassOrObject.constructor == Function ){
-            //Normal Inheritance
-            this.prototype = new parentClassOrObject;
-            this.prototype.constructor = this;
-            this.prototype.parent = parentClassOrObject.prototype;
-        } else {
-            //Pure Virtual Inheritance
-            this.prototype = parentClassOrObject;
-            this.prototype.constructor = this;
-            this.prototype.parent = parentClassOrObject;
-        }
-        return this;
-    };
-    
     function StatisticsBox(context, source) {
         this.context = context;
         this.source = source;
@@ -514,7 +514,7 @@ window.statistics_panel.boxes = (function () {
     
     MonthlyBox.inheritsFrom(StatisticsBox);
     
-    StatisticsBox.prototype.fetchDatas = function () {
+    MonthlyBox.prototype.fetchDatas = function () {
         var self = this,
             params,
             dateFromParams = $('input.stat_interval.from', this.context).val().split("/");
