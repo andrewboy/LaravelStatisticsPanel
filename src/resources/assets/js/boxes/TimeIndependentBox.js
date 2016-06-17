@@ -5,7 +5,8 @@ function TimeIndependentBox(context, source) {
     StatisticsBox.apply(this, Array.prototype.slice.call(arguments));
 }
 
-TimeIndependentBox.prototype = new StatisticsBox();
+//TimeIndependentBox.prototype = new StatisticsBox();
+TimeIndependentBox.inheritsFrom(StatisticsBox);
 
 TimeIndependentBox.prototype.boot = function () {
     this.fetchDatas();

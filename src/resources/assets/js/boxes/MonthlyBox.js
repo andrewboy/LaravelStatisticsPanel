@@ -16,7 +16,9 @@ function MonthlyBox(context, source) {
     });
 }
 
-MonthlyBox.prototype = new StatisticsBox();
+//MonthlyBox.prototype = new StatisticsBox();
+
+MonthlyBox.inheritsFrom(StatisticsBox);
 
 StatisticsBox.prototype.fetchDatas = function () {
     var self = this,

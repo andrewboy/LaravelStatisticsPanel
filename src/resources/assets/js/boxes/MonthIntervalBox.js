@@ -5,7 +5,8 @@ function MonthIntervalBox(context, source) {
     MonthlyBox.apply(this, Array.prototype.slice.call(arguments));
 }
 
-MonthIntervalBox.prototype = new MonthlyBox();
+//MonthIntervalBox.prototype = new MonthlyBox();
+MonthIntervalBox.inheritsFrom(MonthlyBox);
 
 MonthIntervalBox.prototype.fetchDatas = function () {
     var self = this,

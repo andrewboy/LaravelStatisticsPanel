@@ -392,6 +392,21 @@ window.statistics_panel.widgets = (function () {
 //};
 
 window.statistics_panel.boxes = (function () {
+    Function.prototype.inheritsFrom = function( parentClassOrObject ){
+        if ( parentClassOrObject.constructor == Function ){
+            //Normal Inheritance
+            this.prototype = new parentClassOrObject;
+            this.prototype.constructor = this;
+            this.prototype.parent = parentClassOrObject.prototype;
+        } else {
+            //Pure Virtual Inheritance
+            this.prototype = parentClassOrObject;
+            this.prototype.constructor = this;
+            this.prototype.parent = parentClassOrObject;
+        }
+        return this;
+    };
+    
     function StatisticsBox(context, source) {
         this.context = context;
         this.source = source;
@@ -458,7 +473,8 @@ window.statistics_panel.boxes = (function () {
         StatisticsBox.apply(this, Array.prototype.slice.call(arguments));
     }
     
-    TimeIndependentBox.prototype = new StatisticsBox();
+    //TimeIndependentBox.prototype = new StatisticsBox();
+    TimeIndependentBox.inheritsFrom(StatisticsBox);
     
     TimeIndependentBox.prototype.boot = function () {
         this.fetchDatas();
@@ -494,7 +510,9 @@ window.statistics_panel.boxes = (function () {
         });
     }
     
-    MonthlyBox.prototype = new StatisticsBox();
+    //MonthlyBox.prototype = new StatisticsBox();
+    
+    MonthlyBox.inheritsFrom(StatisticsBox);
     
     StatisticsBox.prototype.fetchDatas = function () {
         var self = this,
@@ -525,7 +543,8 @@ window.statistics_panel.boxes = (function () {
         MonthlyBox.apply(this, Array.prototype.slice.call(arguments));
     }
     
-    MonthIntervalBox.prototype = new MonthlyBox();
+    //MonthIntervalBox.prototype = new MonthlyBox();
+    MonthIntervalBox.inheritsFrom(MonthlyBox);
     
     MonthIntervalBox.prototype.fetchDatas = function () {
         var self = this,
