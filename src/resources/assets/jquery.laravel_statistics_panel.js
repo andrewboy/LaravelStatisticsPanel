@@ -40,7 +40,7 @@ window.statistics_panel.boxes = (function () {
         StatisticsBox: StatisticsBox,
         TimeIndependentBox: TimeIndependentBox,
         MonthlyBox: MonthlyBox,
-        MonthInterval: MonthIntervalBox,
+        MonthIntervalBox: MonthIntervalBox,
     };
 }());
 
