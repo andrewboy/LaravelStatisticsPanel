@@ -34,7 +34,7 @@ window.statistics_panel.widgets = (function () {
     //=require js/widgets/GoalCompletionWidget.js
     //=require js/widgets/LineChartWidget.js
     //=require js/widgets/ToplistWidget.js
-    //=require js/widgets/MapToplist.js
+    //=require js/widgets/MapToplistWidget.js
     //=require js/widgets/BarChartWidget.js
 
     return {
@@ -46,7 +46,7 @@ window.statistics_panel.widgets = (function () {
         GoalCompletionWidget: GoalCompletionWidget,
         LineChartWidget: LineChartWidget,
         ToplistWidget: ToplistWidget,
-        MapToplist: MapToplist,
+        MapToplistWidget: MapToplistWidget,
         BarChartWidget: BarChartWidget,
     };
 }());
@@ -57,12 +57,14 @@ window.statistics_panel.stat_widgets = (function () {
     //=require js/stat_widgets/StatToplistWidget.js
     //=require js/stat_widgets/StatGridWidget.js
     //=require js/stat_widgets/StatDoughnutChartWidget.js
+    //=require js/stat_widgets/StatMapToplistWidget.js
 
     return {
         StatGoalCompletionWidget: StatGoalCompletionWidget,
         StatToplistWidget: StatToplistWidget,
         StatGridWidget: StatGridWidget,
         StatDoughnutChartWidget: StatDoughnutChartWidget,
+        StatMapToplistWidget: StatMapToplistWidget,
     };
 }());
 

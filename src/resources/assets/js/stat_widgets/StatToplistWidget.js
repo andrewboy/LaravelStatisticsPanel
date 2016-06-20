@@ -11,5 +11,5 @@ StatToplistWidget.prototype.init = function () {
 };
 
 StatToplistWidget.prototype.update = function (data) {
-    this.setGrid(data);
+    this.setMultiMap(data);
 };

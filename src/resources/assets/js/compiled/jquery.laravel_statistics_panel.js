@@ -641,13 +641,74 @@ window.statistics_panel.widgets = (function () {
     
         this.getGridBody().html(gridBodyHtml);
     };
-    function MapToplist(id, options) {
+    function MapToplistWidget(id, options) {
         GridWidget.apply(this, Array.prototype.slice.call(arguments));
     
         this.markerClusterer = null;
         var settings = $.extend({}, {}, options || {});
     
-        var mapStyle = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}];
+        var mapStyle = [{
+                "featureType":"landscape",
+                "stylers":[
+                    {"saturation":-100},
+                    {"lightness":65},
+                    {"visibility":"on"}
+                ]
+            },{
+                "featureType":"poi",
+                "stylers":[
+                    {"saturation":-100},
+                    {"lightness":51},
+                    {"visibility":"simplified"}
+                ]
+            },{
+                "featureType":"road.highway",
+                "stylers":[
+                    {"saturation":-100},
+                    {"visibility":"simplified"}
+                ]
+            },{
+                "featureType":"road.arterial",
+                "stylers":[
+                    {"saturation":-100},
+                    {"lightness":30},
+                    {"visibility":"on"}
+                ]
+            },{
+                "featureType":"road.local",
+                "stylers":[
+                    {"saturation":-100},
+                    {"lightness":40},
+                    {"visibility":"on"}
+                ]
+            },{
+                "featureType":"transit",
+                "stylers":[
+                    {"saturation":-100},
+                    {"visibility":"simplified"}
+                ]
+            },{
+                "featureType":"administrative.province",
+                "stylers":[
+                    {"visibility":"off"}
+                ]
+            },{
+                "featureType":"water",
+                "elementType":"labels",
+                "stylers":[
+                    {"visibility":"on"},
+                    {"lightness":-25},
+                    {"saturation":-100}
+                ]
+            },{
+                "featureType":"water",
+                "elementType":"geometry",
+                "stylers":[
+                    {"hue":"#ffff00"},
+                    {"lightness":-25},
+                    {"saturation":-97}
+                ]
+            }];
     
         var mapOptions = {
             zoom: 6,
@@ -655,16 +716,17 @@ window.statistics_panel.widgets = (function () {
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             styles: mapStyle
         };
+    
         this.map = new google.maps.Map($('.map', this.id)[0], mapOptions);
     }
     
-    MapToplist.prototype = new GridWidget();
+    MapToplistWidget.prototype = new GridWidget();
     
-    MapToplist.prototype.getGridBody = function () {
+    MapToplistWidget.prototype.getGridBody = function () {
         return $('.toplist', this.id);
     };
     
-    MapToplist.prototype.setMultiMap = function (data) {
+    MapToplistWidget.prototype.setMultiMap = function (data) {
         var i,
             max,
             markers = [];
@@ -753,7 +815,7 @@ window.statistics_panel.widgets = (function () {
         GoalCompletionWidget: GoalCompletionWidget,
         LineChartWidget: LineChartWidget,
         ToplistWidget: ToplistWidget,
-        MapToplist: MapToplist,
+        MapToplistWidget: MapToplistWidget,
         BarChartWidget: BarChartWidget,
     };
 }());
@@ -790,7 +852,7 @@ window.statistics_panel.stat_widgets = (function () {
     };
     
     StatToplistWidget.prototype.update = function (data) {
-        this.setGrid(data);
+        this.setMultiMap(data);
     };
     function StatGridWidget(id) {
         this.id = id;
@@ -828,12 +890,28 @@ window.statistics_panel.stat_widgets = (function () {
     StatDoughnutChartWidget.prototype.update = function (data) {
         this.setDiagram(data);
     };
+    function StatMapToplistWidget(id) {
+        this.id = id;
+    
+        window.statistics_panel.widgets.ToplistWidget.apply(this, [id, window.statistics_panel.config.chart_options.toplist.colors]);
+    }
+    
+    StatMapToplistWidget.prototype = new window.statistics_panel.widgets.MapToplistWidget();
+    
+    StatMapToplistWidget.prototype.init = function () {
+    
+    };
+    
+    StatMapToplistWidget.prototype.update = function (data) {
+        this.setMultiMap(data);
+    };
 
     return {
         StatGoalCompletionWidget: StatGoalCompletionWidget,
         StatToplistWidget: StatToplistWidget,
         StatGridWidget: StatGridWidget,
         StatDoughnutChartWidget: StatDoughnutChartWidget,
+        StatMapToplistWidget: StatMapToplistWidget,
     };
 }());
 
