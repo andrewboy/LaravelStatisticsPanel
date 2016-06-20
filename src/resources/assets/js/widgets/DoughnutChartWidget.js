@@ -1,5 +1,5 @@
 function DoughnutChartWidget(id, colors, options) {
-    this.chart;
+    this.chart = null;
     this.options = options;
     this.colors = colors;
 
