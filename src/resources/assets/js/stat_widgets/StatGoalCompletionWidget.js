@@ -4,7 +4,7 @@ function StatGoalCompletionWidget (id) {
     window.statistics_panel.widgets.GoalCompletionWidget.apply(this, Array.prototype.slice.call(arguments));
 }
 
-StatGoalCompletionWidget.prototype = new  window.statistics_panel.widgets.GoalCompletionWidget();
+StatGoalCompletionWidget.prototype = new window.statistics_panel.widgets.GoalCompletionWidget();
 
 StatGoalCompletionWidget.prototype.init = function () {
 

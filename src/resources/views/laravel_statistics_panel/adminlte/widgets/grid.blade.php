@@ -2,7 +2,7 @@
      class="box {{ $class or '' }}"
      {!! isset($attributes) ? implode(' ', array_map(function ($v, $k) { return $k . '="' . $v .'"'; }, $attributes, array_keys($attributes))) : null !!}>
      <div class="box-header with-border">
-        <h3 class="box-title">{{ $title }}</h3>
+        <h3 class="box-title">{{ $title or '' }}</h3>
     </div>
     <div class="box-body no-padding">
         @if(isset($data))
