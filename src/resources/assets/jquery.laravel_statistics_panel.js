@@ -61,12 +61,12 @@ window.statistics_panel.stat_widgets = (function () {
     //=require js/stat_widgets/StatLineChartWidget.js
 
     return {
-        'goal_completion_widget': StatGoalCompletionWidget,
-        'toplist_widget': StatToplistWidget,
-        'grid_widget': StatGridWidget,
-        'doughnut_chart_widget': StatDoughnutChartWidget,
-        'map_toplist_widget': StatMapToplistWidget,
-        'line_chart_widget': StatLineChartWidget
+        'goal_completion': StatGoalCompletionWidget,
+        'toplist': StatToplistWidget,
+        'grid': StatGridWidget,
+        'doughnut_chart': StatDoughnutChartWidget,
+        'map_toplist': StatMapToplistWidget,
+        'line_chart': StatLineChartWidget
     };
 }());
 
