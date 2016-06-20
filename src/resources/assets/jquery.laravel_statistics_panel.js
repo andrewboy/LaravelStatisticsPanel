@@ -15,6 +15,16 @@ Function.prototype.inheritsFrom = function( parentClassOrObject ){
 
 window.statistics_panel = {};
 
+window.statistics_panel.config = (function() {
+    //=require js/config/colorPalette.js
+    //=require js/config/chartOptions.js
+
+    return {
+        'color_palette': colorPalette,
+        'chart_options': chartOptions,
+    };
+}());
+
 window.statistics_panel.widgets = (function () {
     //=require js/widgets/Widget.js
     //=require js/widgets/ChartWidget.js
