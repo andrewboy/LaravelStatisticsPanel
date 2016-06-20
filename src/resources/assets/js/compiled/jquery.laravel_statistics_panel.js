@@ -493,13 +493,16 @@ window.statistics_panel.boxes = (function () {
         });
     };
     function MonthlyBox(context, source) {
-        this.context = context;
-        this.source = source;
+        //this.context = context;
+        //this.source = source;
     
         StatisticsBox.apply(this, Array.prototype.slice.call(arguments));
     
         var self = this;
     
+    }
+    
+    MonthlyBox.prototype.boot = function () {
         $('input.stat_interval', this.context).datepicker({
             format: "yyyy/mm",
             startView: "months",
@@ -508,7 +511,9 @@ window.statistics_panel.boxes = (function () {
         }).on('changeDate', function () {
             self.fetchDatas();
         });
-    }
+    
+        this.fetchDatas();
+    };
     
     //MonthlyBox.prototype = new StatisticsBox();
     
@@ -537,8 +542,8 @@ window.statistics_panel.boxes = (function () {
         });
     };
     function MonthIntervalBox(context, source) {
-        this.context = context;
-        this.source = source;
+        //this.context = context;
+        //this.source = source;
     
         MonthlyBox.apply(this, Array.prototype.slice.call(arguments));
     }

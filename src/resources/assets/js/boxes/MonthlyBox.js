@@ -1,11 +1,14 @@
 function MonthlyBox(context, source) {
-    this.context = context;
-    this.source = source;
+    //this.context = context;
+    //this.source = source;
 
     StatisticsBox.apply(this, Array.prototype.slice.call(arguments));
 
     var self = this;
 
+}
+
+MonthlyBox.prototype.boot = function () {
     $('input.stat_interval', this.context).datepicker({
         format: "yyyy/mm",
         startView: "months",
@@ -14,7 +17,9 @@ function MonthlyBox(context, source) {
     }).on('changeDate', function () {
         self.fetchDatas();
     });
-}
+
+    this.fetchDatas();
+};
 
 //MonthlyBox.prototype = new StatisticsBox();
 

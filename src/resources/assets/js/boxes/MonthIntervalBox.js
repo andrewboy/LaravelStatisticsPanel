@@ -1,6 +1,6 @@
 function MonthIntervalBox(context, source) {
-    this.context = context;
-    this.source = source;
+    //this.context = context;
+    //this.source = source;
 
     MonthlyBox.apply(this, Array.prototype.slice.call(arguments));
 }
