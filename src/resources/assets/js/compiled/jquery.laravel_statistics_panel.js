@@ -852,7 +852,7 @@ window.statistics_panel.stat_widgets = (function () {
     };
     
     StatToplistWidget.prototype.update = function (data) {
-        this.setMultiMap(data);
+        this.setGrid(data);
     };
     function StatGridWidget(id) {
         this.id = id;
