@@ -821,7 +821,7 @@ window.statistics_panel.widgets = (function () {
 }());
 
 
-window.statistics_panel.stat_widgets = (function () {
+window.statistics_panel.stat_widgets = (function ($) {
     function StatGoalCompletionWidget (id) {
         this.id = id;
     
@@ -935,7 +935,7 @@ window.statistics_panel.stat_widgets = (function () {
         'map_toplist': StatMapToplistWidget,
         'line_chart': StatLineChartWidget
     };
-}());
+}(jQuery));
 
 //window.statistics_panel.widgets.extend = function (modules) {
 //    $.extend(statistics_panel.widgets, modules);

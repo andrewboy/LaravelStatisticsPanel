@@ -52,7 +52,7 @@ window.statistics_panel.widgets = (function () {
 }());
 
 
-window.statistics_panel.stat_widgets = (function () {
+window.statistics_panel.stat_widgets = (function ($) {
     //=require js/stat_widgets/StatGoalCompletionWidget.js
     //=require js/stat_widgets/StatToplistWidget.js
     //=require js/stat_widgets/StatGridWidget.js
@@ -68,7 +68,7 @@ window.statistics_panel.stat_widgets = (function () {
         'map_toplist': StatMapToplistWidget,
         'line_chart': StatLineChartWidget
     };
-}());
+}(jQuery));
 
 //window.statistics_panel.widgets.extend = function (modules) {
 //    $.extend(statistics_panel.widgets, modules);
