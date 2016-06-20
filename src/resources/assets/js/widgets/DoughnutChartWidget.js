@@ -1,4 +1,8 @@
 function DoughnutChartWidget(id, colors, options) {
+    this.chart;
+    this.options = options;
+    this.colors = colors;
+
     ChartWidget.apply(this, Array.prototype.slice.call(arguments));
 }
 
