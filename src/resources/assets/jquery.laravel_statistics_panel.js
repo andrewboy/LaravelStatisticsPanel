@@ -58,6 +58,7 @@ window.statistics_panel.stat_widgets = (function () {
     //=require js/stat_widgets/StatGridWidget.js
     //=require js/stat_widgets/StatDoughnutChartWidget.js
     //=require js/stat_widgets/StatMapToplistWidget.js
+    //=require js/stat_widgets/StatLineChartWidget.js
 
     return {
         StatGoalCompletionWidget: StatGoalCompletionWidget,
@@ -65,6 +66,7 @@ window.statistics_panel.stat_widgets = (function () {
         StatGridWidget: StatGridWidget,
         StatDoughnutChartWidget: StatDoughnutChartWidget,
         StatMapToplistWidget: StatMapToplistWidget,
+        StatLineChartWidget: StatLineChartWidget,
     };
 }());
 

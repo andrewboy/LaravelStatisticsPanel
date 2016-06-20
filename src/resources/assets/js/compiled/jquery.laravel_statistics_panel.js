@@ -746,7 +746,7 @@ window.statistics_panel.widgets = (function () {
                 markers.push(marker);
             }
     
-            this.markerClusterer = new MarkerClusterer(this.map, mar, {imagePath: '/images/vendor/js-marker-clusterer/m'});
+            this.markerClusterer = new MarkerClusterer(this.map, markers, {imagePath: '/images/vendor/js-marker-clusterer/m'});
     
             this.markerClusterer.setCalculator(function(markers, numStyles) {
                 var val = 0,
@@ -905,6 +905,27 @@ window.statistics_panel.stat_widgets = (function () {
     StatMapToplistWidget.prototype.update = function (data) {
         this.setMultiMap(data);
     };
+    function StatLineChartWidget(id) {
+        this.id = id;
+    
+        window.statistics_panel.widgets.LineChartWidget.apply(
+            this, [
+                id,
+                window.statistics_panel.config.chart_options.line.colors,
+                window.statistics_panel.config.chart_options.line.options,
+            ]
+        );
+    }
+    
+    StatLineChartWidget.prototype = new window.statistics_panel.widgets.LineChartWidget();
+    
+    StatLineChartWidget.prototype.init = function () {
+    
+    };
+    
+    StatLineChartWidget.prototype.update = function (data) {
+        this.setDiagram(data);
+    };
 
     return {
         StatGoalCompletionWidget: StatGoalCompletionWidget,
@@ -912,6 +933,7 @@ window.statistics_panel.stat_widgets = (function () {
         StatGridWidget: StatGridWidget,
         StatDoughnutChartWidget: StatDoughnutChartWidget,
         StatMapToplistWidget: StatMapToplistWidget,
+        StatLineChartWidget: StatLineChartWidget,
     };
 }());
 
