@@ -402,6 +402,31 @@ window.statistics_panel.widgets = (function () {
     };
 }());
 
+
+window.statistics_panel.stat_widgets = (function () {
+    function StatGoalCompletionWidget (id) {
+        this.id = id;
+    
+        window.statistics_panel.widgets.GoalCompletionWidget.apply(this, Array.prototype.slice.call(arguments));
+    }
+    
+    StatGoalCompletionWidget.prototype = new window.statistics_panel.widgets.GoalCompletionWidget();
+    
+    StatGoalCompletionWidget.prototype.init = function () {
+    
+    };
+    
+    StatGoalCompletionWidget.prototype.update = function (data) {
+        this.setPercent(data.percent);
+        this.setDescription(data.description);
+        this.setValue(data.reached);
+    };
+
+    return {
+        StatGoalCompletionWidget: StatGoalCompletionWidget,
+    };
+}());
+
 //window.statistics_panel.widgets.extend = function (modules) {
 //    $.extend(statistics_panel.widgets, modules);
 //};
@@ -584,29 +609,5 @@ window.statistics_panel.boxes = (function () {
         TimeIndependentBox: TimeIndependentBox,
         MonthlyBox: MonthlyBox,
         MonthIntervalBox: MonthIntervalBox,
-    };
-}());
-
-window.statistics_panel.stat_widgets = (function () {
-    function StatGoalCompletionWidget (id) {
-        this.id = id;
-    
-        window.statistics_panel.widgets.GoalCompletionWidget.apply(this, Array.prototype.slice.call(arguments));
-    }
-    
-    StatGoalCompletionWidget.prototype = new window.statistics_panel.widgets.GoalCompletionWidget();
-    
-    StatGoalCompletionWidget.prototype.init = function () {
-    
-    };
-    
-    StatGoalCompletionWidget.prototype.update = function (data) {
-        this.setPercent(data.percent);
-        this.setDescription(data.description);
-        this.setValue(data.reached);
-    };
-
-    return {
-        StatGoalCompletionWidget: StatGoalCompletionWidget,
     };
 }());
