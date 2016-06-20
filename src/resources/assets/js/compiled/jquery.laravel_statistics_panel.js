@@ -499,6 +499,8 @@ window.statistics_panel.boxes = (function () {
         StatisticsBox.apply(this, Array.prototype.slice.call(arguments));
     }
     
+    MonthlyBox.inheritsFrom(StatisticsBox);
+    
     MonthlyBox.prototype.boot = function () {
         var self = this;
     
@@ -516,7 +518,6 @@ window.statistics_panel.boxes = (function () {
     
     //MonthlyBox.prototype = new StatisticsBox();
     
-    MonthlyBox.inheritsFrom(StatisticsBox);
     
     MonthlyBox.prototype.fetchDatas = function () {
         var self = this,
