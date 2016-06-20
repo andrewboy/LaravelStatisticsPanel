@@ -74,16 +74,16 @@ window.statistics_panel.stat_widgets = (function () {
 //    $.extend(statistics_panel.widgets, modules);
 //};
 
-window.statistics_panel.boxes = (function () {
+window.statistics_panel.boxes = (function ($) {
     //=require js/boxes/StatisticsBox.js
     //=require js/boxes/TimeIndependentBox.js
     //=require js/boxes/MonthlyBox.js
     //=require js/boxes/MonthIntervalBox.js
 
     return {
-        StatisticsBox: StatisticsBox,
-        TimeIndependentBox: TimeIndependentBox,
-        MonthlyBox: MonthlyBox,
-        MonthIntervalBox: MonthIntervalBox,
+        'base': StatisticsBox,
+        'time_independent': TimeIndependentBox,
+        'monthly': MonthlyBox,
+        'month_interval': MonthIntervalBox,
     };
-}());
+}(jQuery));

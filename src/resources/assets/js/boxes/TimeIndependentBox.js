@@ -1,7 +1,4 @@
 function TimeIndependentBox(context, source) {
-    this.context = context;
-    this.source = source;
-
     StatisticsBox.apply(this, Array.prototype.slice.call(arguments));
 }
 

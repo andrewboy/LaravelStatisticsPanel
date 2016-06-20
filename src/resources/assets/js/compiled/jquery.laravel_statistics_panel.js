@@ -941,7 +941,7 @@ window.statistics_panel.stat_widgets = (function () {
 //    $.extend(statistics_panel.widgets, modules);
 //};
 
-window.statistics_panel.boxes = (function () {
+window.statistics_panel.boxes = (function ($) {
     function StatisticsBox(context, source) {
         this.context = context;
         this.source = source;
@@ -1002,9 +1002,6 @@ window.statistics_panel.boxes = (function () {
         });
     };
     function TimeIndependentBox(context, source) {
-        this.context = context;
-        this.source = source;
-    
         StatisticsBox.apply(this, Array.prototype.slice.call(arguments));
     }
     
@@ -1028,9 +1025,6 @@ window.statistics_panel.boxes = (function () {
         });
     };
     function MonthlyBox(context, source) {
-        //this.context = context;
-        //this.source = source;
-    
         StatisticsBox.apply(this, Array.prototype.slice.call(arguments));
     }
     
@@ -1077,9 +1071,6 @@ window.statistics_panel.boxes = (function () {
         });
     };
     function MonthIntervalBox(context, source) {
-        //this.context = context;
-        //this.source = source;
-    
         MonthlyBox.apply(this, Array.prototype.slice.call(arguments));
     }
     
@@ -1115,9 +1106,9 @@ window.statistics_panel.boxes = (function () {
     };
 
     return {
-        StatisticsBox: StatisticsBox,
-        TimeIndependentBox: TimeIndependentBox,
-        MonthlyBox: MonthlyBox,
-        MonthIntervalBox: MonthIntervalBox,
+        'base': StatisticsBox,
+        'time_independent': TimeIndependentBox,
+        'monthly': MonthlyBox,
+        'month_interval': MonthIntervalBox,
     };
-}());
+}(jQuery));
