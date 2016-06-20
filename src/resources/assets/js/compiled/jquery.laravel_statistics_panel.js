@@ -746,7 +746,7 @@ window.statistics_panel.widgets = (function () {
                 markers.push(marker);
             }
     
-            this.markerClusterer = new MarkerClusterer(this.map, markers, {imagePath: '/images/vendor/js-marker-clusterer/m'});
+            this.markerClusterer = new MarkerClusterer(this.map, mar, {imagePath: '/images/vendor/js-marker-clusterer/m'});
     
             this.markerClusterer.setCalculator(function(markers, numStyles) {
                 var val = 0,
