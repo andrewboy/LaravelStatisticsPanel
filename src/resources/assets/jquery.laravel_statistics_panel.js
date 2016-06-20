@@ -55,10 +55,12 @@ window.statistics_panel.widgets = (function () {
 window.statistics_panel.stat_widgets = (function () {
     //=require js/stat_widgets/StatGoalCompletionWidget.js
     //=require js/stat_widgets/StatToplistWidget.js
+    //=require js/stat_widgets/StatGridWidget.js
 
     return {
         StatGoalCompletionWidget: StatGoalCompletionWidget,
         StatToplistWidget: StatToplistWidget,
+        StatGridWidget: StatGridWidget,
     };
 }());
 
