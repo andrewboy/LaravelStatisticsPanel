@@ -1,7 +1,7 @@
 function ChartWidget(id, colors, options) {
     Widget.apply(this, Array.prototype.slice.call(arguments));
 
-    this.chart;
+    this.chart = null;
     this.options = options;
     this.colors = colors;
 }

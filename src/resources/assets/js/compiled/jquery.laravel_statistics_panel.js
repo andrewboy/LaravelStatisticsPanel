@@ -415,7 +415,7 @@ window.statistics_panel.widgets = (function () {
     function ChartWidget(id, colors, options) {
         Widget.apply(this, Array.prototype.slice.call(arguments));
     
-        this.chart;
+        this.chart = null;
         this.options = options;
         this.colors = colors;
     }
@@ -503,10 +503,6 @@ window.statistics_panel.widgets = (function () {
         this.getValue().html(value);
     };
     function DoughnutChartWidget(id, colors, options) {
-        this.chart = null;
-        this.options = options;
-        this.colors = colors;
-    
         ChartWidget.apply(this, Array.prototype.slice.call(arguments));
     }
     
