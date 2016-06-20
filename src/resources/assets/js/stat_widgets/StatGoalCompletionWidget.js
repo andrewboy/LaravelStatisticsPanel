@@ -1,10 +1,10 @@
 function StatGoalCompletionWidget (id) {
     this.id = id;
 
-    window.statistics_panel.widgets.GoalCompletionWidget.apply(this, Array.prototype.slice.call(arguments));
+    window.statistics_panel.widgets.goal_completion.apply(this, Array.prototype.slice.call(arguments));
 }
 
-StatGoalCompletionWidget.prototype = new window.statistics_panel.widgets.GoalCompletionWidget();
+StatGoalCompletionWidget.prototype = new window.statistics_panel.widgets.goal_completion();
 
 StatGoalCompletionWidget.prototype.init = function () {
 

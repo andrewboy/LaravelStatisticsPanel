@@ -367,7 +367,7 @@ window.statistics_panel.config = (function() {
 
     return {
         'color_palette': colorPalette,
-        'chart_options': chartOptions,
+        'chart_options': chartOptions
     };
 }());
 
@@ -807,16 +807,16 @@ window.statistics_panel.widgets = (function () {
     };
 
     return {
-        Widget: Widget,
-        ChartWidget: ChartWidget,
-        GridWidget: GridWidget,
-        BoxWidget: BoxWidget,
-        DoughnutChartWidget: DoughnutChartWidget,
-        GoalCompletionWidget: GoalCompletionWidget,
-        LineChartWidget: LineChartWidget,
-        ToplistWidget: ToplistWidget,
-        MapToplistWidget: MapToplistWidget,
-        BarChartWidget: BarChartWidget,
+        'base': Widget,
+        'chart': ChartWidget,
+        'grid': GridWidget,
+        'box': BoxWidget,
+        'doughnut_chart': DoughnutChartWidget,
+        'goal_completion': GoalCompletionWidget,
+        'line_chart': LineChartWidget,
+        'toplist': ToplistWidget,
+        'map_toplist': MapToplistWidget,
+        'bar_chart': BarChartWidget
     };
 }());
 
@@ -825,10 +825,10 @@ window.statistics_panel.stat_widgets = (function ($) {
     function StatGoalCompletionWidget (id) {
         this.id = id;
     
-        window.statistics_panel.widgets.GoalCompletionWidget.apply(this, Array.prototype.slice.call(arguments));
+        window.statistics_panel.widgets.goal_completion.apply(this, Array.prototype.slice.call(arguments));
     }
     
-    StatGoalCompletionWidget.prototype = new window.statistics_panel.widgets.GoalCompletionWidget();
+    StatGoalCompletionWidget.prototype = new window.statistics_panel.widgets.goal_completion();
     
     StatGoalCompletionWidget.prototype.init = function () {
     
@@ -857,10 +857,10 @@ window.statistics_panel.stat_widgets = (function ($) {
     function StatGridWidget(id) {
         this.id = id;
     
-        window.statistics_panel.widgets.GridWidget.apply(this, [id]);
+        window.statistics_panel.widgets.grid.apply(this, [id]);
     }
     
-    StatGridWidget.prototype = new window.statistics_panel.widgets.GridWidget();
+    StatGridWidget.prototype = new window.statistics_panel.widgets.grid();
     
     StatGridWidget.prototype.init = function () {
     
@@ -872,7 +872,7 @@ window.statistics_panel.stat_widgets = (function ($) {
     function StatDoughnutChartWidget(id) {
         this.id = id;
     
-        window.statistics_panel.widgets.DoughnutChartWidget.apply(
+        window.statistics_panel.widgets.doughnut_chart.apply(
             this, [
                 id,
                 window.statistics_panel.config.chart_options.pie.colors,
@@ -881,7 +881,7 @@ window.statistics_panel.stat_widgets = (function ($) {
         );
     }
     
-    StatDoughnutChartWidget.prototype = new window.statistics_panel.widgets.DoughnutChartWidget();
+    StatDoughnutChartWidget.prototype = new window.statistics_panel.widgets.doughnut_chart();
     
     StatDoughnutChartWidget.prototype.init = function () {
     
@@ -893,10 +893,10 @@ window.statistics_panel.stat_widgets = (function ($) {
     function StatMapToplistWidget(id) {
         this.id = id;
     
-        window.statistics_panel.widgets.ToplistWidget.apply(this, [id, window.statistics_panel.config.chart_options.toplist.colors]);
+        window.statistics_panel.widgets.map_toplist.apply(this, [id, window.statistics_panel.config.chart_options.toplist.colors]);
     }
     
-    StatMapToplistWidget.prototype = new window.statistics_panel.widgets.MapToplistWidget();
+    StatMapToplistWidget.prototype = new window.statistics_panel.widgets.map_toplist();
     
     StatMapToplistWidget.prototype.init = function () {
     
@@ -908,7 +908,7 @@ window.statistics_panel.stat_widgets = (function ($) {
     function StatLineChartWidget(id) {
         this.id = id;
     
-        window.statistics_panel.widgets.LineChartWidget.apply(
+        window.statistics_panel.widgets.line_chart.apply(
             this, [
                 id,
                 window.statistics_panel.config.chart_options.line.colors,
@@ -917,7 +917,7 @@ window.statistics_panel.stat_widgets = (function ($) {
         );
     }
     
-    StatLineChartWidget.prototype = new window.statistics_panel.widgets.LineChartWidget();
+    StatLineChartWidget.prototype = new window.statistics_panel.widgets.line_chart();
     
     StatLineChartWidget.prototype.init = function () {
     
@@ -1109,6 +1109,6 @@ window.statistics_panel.boxes = (function ($) {
         'base': StatisticsBox,
         'time_independent': TimeIndependentBox,
         'monthly': MonthlyBox,
-        'month_interval': MonthIntervalBox,
+        'month_interval': MonthIntervalBox
     };
 }(jQuery));

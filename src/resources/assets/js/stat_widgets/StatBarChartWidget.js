@@ -1,10 +1,10 @@
 function StatBarChartWidget (id) {
     this.id = id;
 
-    window.statistics_panel.widgets.BarChartWidget.apply(this, Array.prototype.slice.call(arguments));
+    window.statistics_panel.widgets.bar_chart.apply(this, Array.prototype.slice.call(arguments));
 }
 
-StatBarChartWidget.prototype = new  window.statistics_panel.widgets.BarChartWidget();
+StatBarChartWidget.prototype = new  window.statistics_panel.widgets.bar_chart();
 
 StatGoalCompletionWidget.prototype.init = function () {
 

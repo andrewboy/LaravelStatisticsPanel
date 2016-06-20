@@ -1,7 +1,7 @@
 function StatDoughnutChartWidget(id) {
     this.id = id;
 
-    window.statistics_panel.widgets.DoughnutChartWidget.apply(
+    window.statistics_panel.widgets.doughnut_chart.apply(
         this, [
             id,
             window.statistics_panel.config.chart_options.pie.colors,
@@ -10,7 +10,7 @@ function StatDoughnutChartWidget(id) {
     );
 }
 
-StatDoughnutChartWidget.prototype = new window.statistics_panel.widgets.DoughnutChartWidget();
+StatDoughnutChartWidget.prototype = new window.statistics_panel.widgets.doughnut_chart();
 
 StatDoughnutChartWidget.prototype.init = function () {
 

@@ -21,7 +21,7 @@ window.statistics_panel.config = (function() {
 
     return {
         'color_palette': colorPalette,
-        'chart_options': chartOptions,
+        'chart_options': chartOptions
     };
 }());
 
@@ -38,16 +38,16 @@ window.statistics_panel.widgets = (function () {
     //=require js/widgets/BarChartWidget.js
 
     return {
-        Widget: Widget,
-        ChartWidget: ChartWidget,
-        GridWidget: GridWidget,
-        BoxWidget: BoxWidget,
-        DoughnutChartWidget: DoughnutChartWidget,
-        GoalCompletionWidget: GoalCompletionWidget,
-        LineChartWidget: LineChartWidget,
-        ToplistWidget: ToplistWidget,
-        MapToplistWidget: MapToplistWidget,
-        BarChartWidget: BarChartWidget,
+        'base': Widget,
+        'chart': ChartWidget,
+        'grid': GridWidget,
+        'box': BoxWidget,
+        'doughnut_chart': DoughnutChartWidget,
+        'goal_completion': GoalCompletionWidget,
+        'line_chart': LineChartWidget,
+        'toplist': ToplistWidget,
+        'map_toplist': MapToplistWidget,
+        'bar_chart': BarChartWidget
     };
 }());
 
@@ -84,6 +84,6 @@ window.statistics_panel.boxes = (function ($) {
         'base': StatisticsBox,
         'time_independent': TimeIndependentBox,
         'monthly': MonthlyBox,
-        'month_interval': MonthIntervalBox,
+        'month_interval': MonthIntervalBox
     };
 }(jQuery));

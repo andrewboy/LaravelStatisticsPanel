@@ -1,10 +1,10 @@
 function StatMapToplistWidget(id) {
     this.id = id;
 
-    window.statistics_panel.widgets.ToplistWidget.apply(this, [id, window.statistics_panel.config.chart_options.toplist.colors]);
+    window.statistics_panel.widgets.map_toplist.apply(this, [id, window.statistics_panel.config.chart_options.toplist.colors]);
 }
 
-StatMapToplistWidget.prototype = new window.statistics_panel.widgets.MapToplistWidget();
+StatMapToplistWidget.prototype = new window.statistics_panel.widgets.map_toplist();
 
 StatMapToplistWidget.prototype.init = function () {
 
