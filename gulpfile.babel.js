@@ -8,11 +8,11 @@ import babel from 'gulp-babel';
 gulp.task('default', () => {
     console.log('-- gulp is running task: scripts');
 
-    gulp.src('src/resources/assets/js/app_test.js')
+    gulp.src('src/resources/assets/js_babel/app.js')
     .pipe(babel({
         presets: ['es2015']
     }))
-    .pipe(gulp.dest('src/resources/assets/js/dist'));
+    .pipe(gulp.dest('src/resources/assets/js_babel/dist'));
 
     return gulp.src('src/resources/assets/jquery.laravel_statistics_panel.js')
         .pipe(include())
