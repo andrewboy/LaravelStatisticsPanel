@@ -1,26 +1,23 @@
-import $ from 'jquery';
-import jQuery from 'jquery';
-
-export class StatisticsBox {
+class StatisticsBox {
     constructor(context, source) {
         this.context = context;
         this.source = source;
     }
 
-    public init() {
+    init() {
         $('.stat-widget', this.context).each( (i, item) => obj.setWidget($(item) ));
         this.boot();
     }
 
-    public boot() {
+    boot() {
         this.fetchDatas();
     }
 
-    public setLoadIcons(isLoading: boolean) :void {
+    setLoadIcons(isLoading) {
         $('.stat-widget', this.context).each((i, item) => $(item).data('widget').setLoadIcon(isLoading) );
     }
 
-    public updateWidgets(data) {
+    updateWidgets(data) {
         var id, statWidgets = $('.stat-widget', this.context);
 
         for (id in data) {
@@ -33,14 +30,14 @@ export class StatisticsBox {
         }
     }
 
-    public setWidget($item) {
+    setWidget($item) {
         var widget = new window.statistics_panel.stat_widgets[$item.data('type')]($item);
         widget.init($item);
 
         $item.data('widget', widget);
     }
 
-    public fetchDatas() {
+    fetchDatas() {
         this.setLoadIcons(true);
 
         $.ajax({

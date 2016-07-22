@@ -16,8 +16,8 @@ Function.prototype.inheritsFrom = function( parentClassOrObject ){
 window.statistics_panel = {};
 
 window.statistics_panel.config = (function() {
-    //=require js/config/colorPalette.js
-    //=require js/config/chartOptions.js
+    //=require config/colorPalette.js
+    //=require config/chartOptions.js
 
     return {
         'color_palette': colorPalette,
@@ -26,16 +26,16 @@ window.statistics_panel.config = (function() {
 }());
 
 window.statistics_panel.widgets = (function () {
-    //=require js/widgets/Widget.js
-    //=require js/widgets/ChartWidget.js
-    //=require js/widgets/GridWidget.js
-    //=require js/widgets/BoxWidget.js
-    //=require js/widgets/DoughnutChartWidget.js
-    //=require js/widgets/GoalCompletionWidget.js
-    //=require js/widgets/LineChartWidget.js
-    //=require js/widgets/ToplistWidget.js
-    //=require js/widgets/MapToplistWidget.js
-    //=require js/widgets/BarChartWidget.js
+    //=require widgets/Widget.js
+    //=require widgets/ChartWidget.js
+    //=require widgets/GridWidget.js
+    //=require widgets/BoxWidget.js
+    //=require widgets/DoughnutChartWidget.js
+    //=require widgets/GoalCompletionWidget.js
+    //=require widgets/LineChartWidget.js
+    //=require widgets/ToplistWidget.js
+    //=require widgets/MapToplistWidget.js
+    //=require widgets/BarChartWidget.js
 
     return {
         'base': Widget,
@@ -53,12 +53,12 @@ window.statistics_panel.widgets = (function () {
 
 
 window.statistics_panel.stat_widgets = (function ($) {
-    //=require js/stat_widgets/StatGoalCompletionWidget.js
-    //=require js/stat_widgets/StatToplistWidget.js
-    //=require js/stat_widgets/StatGridWidget.js
-    //=require js/stat_widgets/StatDoughnutChartWidget.js
-    //=require js/stat_widgets/StatMapToplistWidget.js
-    //=require js/stat_widgets/StatLineChartWidget.js
+    //=require stat_widgets/StatGoalCompletionWidget.js
+    //=require stat_widgets/StatToplistWidget.js
+    //=require stat_widgets/StatGridWidget.js
+    //=require stat_widgets/StatDoughnutChartWidget.js
+    //=require stat_widgets/StatMapToplistWidget.js
+    //=require stat_widgets/StatLineChartWidget.js
 
     return {
         'goal_completion': StatGoalCompletionWidget,
@@ -75,10 +75,10 @@ window.statistics_panel.stat_widgets = (function ($) {
 //};
 
 window.statistics_panel.boxes = (function ($) {
-    //=require js/boxes/StatisticsBox.js
-    //=require js/boxes/TimeIndependentBox.js
-    //=require js/boxes/MonthlyBox.js
-    //=require js/boxes/MonthIntervalBox.js
+    //=require boxes/StatisticsBox.js
+    //=require boxes/TimeIndependentBox.js
+    //=require boxes/MonthlyBox.js
+    //=require boxes/MonthIntervalBox.js
 
     return {
         'base': StatisticsBox,
