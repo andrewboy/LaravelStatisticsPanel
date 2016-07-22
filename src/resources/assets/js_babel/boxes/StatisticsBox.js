@@ -5,7 +5,7 @@ class StatisticsBox {
     }
 
     init() {
-        $('.stat-widget', this.context).each( (i, item) => obj.setWidget($(item) ));
+        $('.stat-widget', this.context).each( (i, item) => this.setWidget($(item) ));
         this.boot();
     }
 
