@@ -8,7 +8,7 @@ class TimeIndependentBox extends StatisticsBox {
 
         $.ajax({
             type: 'GET',
-            url: self.source
+            url: this.source
         }).done((data) => this.updateWidgets(data) );
     }
 }

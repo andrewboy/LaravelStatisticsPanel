@@ -1115,7 +1115,7 @@ window.statistics_panel.boxes = function ($) {
 
                 $.ajax({
                     type: 'GET',
-                    url: self.source
+                    url: this.source
                 }).done(function (data) {
                     return _this20.updateWidgets(data);
                 });
