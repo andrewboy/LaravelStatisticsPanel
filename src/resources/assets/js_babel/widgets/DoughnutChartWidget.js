@@ -1,9 +1,9 @@
 class DoughnutChartWidget extends ChartWidget {
-    get legend() {
+    getLegend() {
         return $('.chart-legend', this.id);
     }
 
-    set legend(data) {
+    setLegend(data) {
         let legend = '', i, max;
 
         for (i = 0, max = data.length; i < max; i += 1) {

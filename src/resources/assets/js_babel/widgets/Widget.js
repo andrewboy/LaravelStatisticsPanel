@@ -3,27 +3,27 @@ class Widget {
         this.id = id;
     }
 
-    set title(text) {
+    setTitle(text) {
         this.getTitle().html(text);
     }
 
-    get title() {
+    getTitle() {
         return $('.title', this.id);
     }
 
-    get footer() {
+    getFooter() {
         return $('footer', this.id);
     }
 
-    set footer(text) {
+    setFooter(text) {
         this.getFooter().html(text);
     }
 
-    get loadIcon() {
+    getLoadIcon() {
         return $('.overlay', this.id);
     }
 
-    set loadIcon(isVisible) {
+    setLoadIcon(isVisible) {
         if(isVisible) {
             this.getLoadIcon().removeClass('hide');
         } else {
@@ -31,7 +31,7 @@ class Widget {
         }
     }
 
-    get type() {
+    getType() {
         return $(this.id).data('type');
     }
 }

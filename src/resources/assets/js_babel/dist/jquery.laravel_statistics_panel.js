@@ -322,27 +322,33 @@ window.statistics_panel.widgets = function () {
         }
 
         _createClass(Widget, [{
-            key: "title",
-            set: function set(text) {
+            key: "setTitle",
+            value: function setTitle(text) {
                 this.getTitle().html(text);
-            },
-            get: function get() {
+            }
+        }, {
+            key: "getTitle",
+            value: function getTitle() {
                 return $('.title', this.id);
             }
         }, {
-            key: "footer",
-            get: function get() {
+            key: "getFooter",
+            value: function getFooter() {
                 return $('footer', this.id);
-            },
-            set: function set(text) {
+            }
+        }, {
+            key: "setFooter",
+            value: function setFooter(text) {
                 this.getFooter().html(text);
             }
         }, {
-            key: "loadIcon",
-            get: function get() {
+            key: "getLoadIcon",
+            value: function getLoadIcon() {
                 return $('.overlay', this.id);
-            },
-            set: function set(isVisible) {
+            }
+        }, {
+            key: "setLoadIcon",
+            value: function setLoadIcon(isVisible) {
                 if (isVisible) {
                     this.getLoadIcon().removeClass('hide');
                 } else {
@@ -350,8 +356,8 @@ window.statistics_panel.widgets = function () {
                 }
             }
         }, {
-            key: "type",
-            get: function get() {
+            key: "getType",
+            value: function getType() {
                 return $(this.id).data('type');
             }
         }]);
@@ -483,11 +489,13 @@ window.statistics_panel.widgets = function () {
         }
 
         _createClass(BoxWidget, [{
-            key: "value",
-            get: function get() {
+            key: "getValue",
+            value: function getValue() {
                 return $('.value', this.id);
-            },
-            set: function set(value) {
+            }
+        }, {
+            key: "setValue",
+            value: function setValue(value) {
                 this.getValue().html(value);
             }
         }]);
@@ -505,6 +513,24 @@ window.statistics_panel.widgets = function () {
         }
 
         _createClass(DoughnutChartWidget, [{
+            key: "getLegend",
+            value: function getLegend() {
+                return $('.chart-legend', this.id);
+            }
+        }, {
+            key: "setLegend",
+            value: function setLegend(data) {
+                var legend = '',
+                    i = void 0,
+                    max = void 0;
+
+                for (i = 0, max = data.length; i < max; i += 1) {
+                    legend += '<li><i class="fa fa-circle-o text-' + this.colors[i].color_name + '"></i>' + data[i].label + '</li>';
+                }
+
+                return legend;
+            }
+        }, {
             key: "colorize",
             value: function colorize(data) {
                 var i, max;
@@ -535,22 +561,6 @@ window.statistics_panel.widgets = function () {
                     $('.chart-item', this.id).addClass('hidden');
                     $('.no-data', this.id).removeClass('hidden');
                 }
-            }
-        }, {
-            key: "legend",
-            get: function get() {
-                return $('.chart-legend', this.id);
-            },
-            set: function set(data) {
-                var legend = '',
-                    i = void 0,
-                    max = void 0;
-
-                for (i = 0, max = data.length; i < max; i += 1) {
-                    legend += '<li><i class="fa fa-circle-o text-' + this.colors[i].color_name + '"></i>' + data[i].label + '</li>';
-                }
-
-                return legend;
             }
         }]);
 
