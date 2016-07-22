@@ -373,6 +373,7 @@ window.statistics_panel.widgets = function () {
 
             var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ChartWidget).call(this, id));
 
+            _this.chart = null;
             _this.colors = colors;
             _this.options = options;
             return _this;

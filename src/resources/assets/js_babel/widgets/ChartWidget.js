@@ -1,6 +1,7 @@
 class ChartWidget extends Widget {
     constructor(id, colors, options) {
         super(id);
+        this.chart = null;
         this.colors = colors;
         this.options = options;
     }
