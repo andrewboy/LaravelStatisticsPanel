@@ -43,6 +43,7 @@ window.statistics_panel.stat_widgets = (function ($) {
     //=require stat_widgets/StatDoughnutChartWidget.js
     //=require stat_widgets/StatMapToplistWidget.js
     //=require stat_widgets/StatLineChartWidget.js
+    //=require stat_widgets/StatBoxWidget.js
 
     return {
         'goal_completion': StatGoalCompletionWidget,
@@ -50,7 +51,8 @@ window.statistics_panel.stat_widgets = (function ($) {
         'grid': StatGridWidget,
         'doughnut_chart': StatDoughnutChartWidget,
         'map_toplist': StatMapToplistWidget,
-        'line_chart': StatLineChartWidget
+        'line_chart': StatLineChartWidget,
+        'box': StatBoxWidget
     };
 }(jQuery));
 

@@ -986,13 +986,36 @@ window.statistics_panel.stat_widgets = function ($) {
         return StatLineChartWidget;
     }(window.statistics_panel.widgets.line_chart);
 
+    var StatBoxWidget = function (_window$statistics_pa7) {
+        _inherits(StatBoxWidget, _window$statistics_pa7);
+
+        function StatBoxWidget() {
+            _classCallCheck(this, StatBoxWidget);
+
+            return _possibleConstructorReturn(this, Object.getPrototypeOf(StatBoxWidget).apply(this, arguments));
+        }
+
+        _createClass(StatBoxWidget, [{
+            key: "init",
+            value: function init() {}
+        }, {
+            key: "update",
+            value: function update(data) {
+                this.setValue(data);
+            }
+        }]);
+
+        return StatBoxWidget;
+    }(window.statistics_panel.widgets.box);
+
     return {
         'goal_completion': StatGoalCompletionWidget,
         'toplist': StatToplistWidget,
         'grid': StatGridWidget,
         'doughnut_chart': StatDoughnutChartWidget,
         'map_toplist': StatMapToplistWidget,
-        'line_chart': StatLineChartWidget
+        'line_chart': StatLineChartWidget,
+        'box': StatBoxWidget
     };
 }(jQuery);
 
@@ -1008,10 +1031,10 @@ window.statistics_panel.boxes = function ($) {
         _createClass(StatisticsBox, [{
             key: "init",
             value: function init() {
-                var _this16 = this;
+                var _this17 = this;
 
                 $('.stat-widget', this.context).each(function (i, item) {
-                    return _this16.setWidget($(item));
+                    return _this17.setWidget($(item));
                 });
                 this.boot();
             }
@@ -1053,7 +1076,7 @@ window.statistics_panel.boxes = function ($) {
         }, {
             key: "fetchDatas",
             value: function fetchDatas() {
-                var _this17 = this;
+                var _this18 = this;
 
                 this.setLoadIcons(true);
 
@@ -1061,7 +1084,7 @@ window.statistics_panel.boxes = function ($) {
                     type: 'GET',
                     url: this.source
                 }).done(function (data) {
-                    return _this17.updateWidgets(data);
+                    return _this18.updateWidgets(data);
                 });
             }
         }]);
@@ -1086,7 +1109,7 @@ window.statistics_panel.boxes = function ($) {
         }, {
             key: "fetchDatas",
             value: function fetchDatas() {
-                var _this19 = this;
+                var _this20 = this;
 
                 this.setLoadIcons(true);
 
@@ -1094,7 +1117,7 @@ window.statistics_panel.boxes = function ($) {
                     type: 'GET',
                     url: self.source
                 }).done(function (data) {
-                    return _this19.updateWidgets(data);
+                    return _this20.updateWidgets(data);
                 });
             }
         }]);
@@ -1114,7 +1137,7 @@ window.statistics_panel.boxes = function ($) {
         _createClass(MonthlyBox, [{
             key: "boot",
             value: function boot() {
-                var _this21 = this;
+                var _this22 = this;
 
                 $('input.stat_interval', this.context).datepicker({
                     format: "yyyy/mm",
@@ -1122,7 +1145,7 @@ window.statistics_panel.boxes = function ($) {
                     minViewMode: "months",
                     autoclose: true
                 }).on('changeDate', function () {
-                    return _this21.fetchDatas();
+                    return _this22.fetchDatas();
                 });
 
                 this.fetchDatas();
@@ -1130,7 +1153,7 @@ window.statistics_panel.boxes = function ($) {
         }, {
             key: "fetchDatas",
             value: function fetchDatas() {
-                var _this22 = this;
+                var _this23 = this;
 
                 var params = void 0,
                     dateFromParams = $('input.stat_interval.from', this.context).val().split("/");
@@ -1149,7 +1172,7 @@ window.statistics_panel.boxes = function ($) {
                     url: this.source,
                     data: params
                 }).done(function (data) {
-                    return _this22.updateWidgets(data);
+                    return _this23.updateWidgets(data);
                 });
             }
         }]);
@@ -1169,7 +1192,7 @@ window.statistics_panel.boxes = function ($) {
         _createClass(MonthIntervalBox, [{
             key: "fetchDatas",
             value: function fetchDatas() {
-                var _this24 = this;
+                var _this25 = this;
 
                 var params = void 0,
                     dateFromParams = $('input.stat_interval.from', this.context).val().split("/"),
@@ -1193,7 +1216,7 @@ window.statistics_panel.boxes = function ($) {
                     url: this.source,
                     data: params
                 }).done(function (data) {
-                    return _this24.updateWidgets(data);
+                    return _this25.updateWidgets(data);
                 });
             }
         }]);
