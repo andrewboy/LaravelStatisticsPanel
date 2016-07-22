@@ -4,7 +4,7 @@
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
-            <input name="stat_interval_from"
+            <input name="stat_interval from"
                    class="form-control pull-right stat_interval from"
                    type="text"
                    value="{{ $statBoxActualMonthDate or '' }}">

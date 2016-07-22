@@ -4,7 +4,7 @@
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
-            <input name="stat_interval_from"
+            <input name="stat_interval from"
                    class="form-control pull-right stat_interval from"
                    type="text"
                    value="{{ $statBoxActualMonthDateFrom or '' }}">
@@ -15,7 +15,7 @@
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
-            <input name="stat_interval_to"
+            <input name="stat_interval to"
                    class="form-control pull-right stat_interval to"
                    type="text"
                    value="{{ $statBoxActualMonthDateTo or '' }}">
