@@ -1041,7 +1041,7 @@ window.statistics_panel.stat_widgets = function ($) {
         'map_toplist': StatMapToplistWidget,
         'line_chart': StatLineChartWidget,
         'box': StatBoxWidget,
-        'bar_chart': BarChartWidget
+        'bar_chart': StatBarChartWidget
     };
 }(jQuery);
 
