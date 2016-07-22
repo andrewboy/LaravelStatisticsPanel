@@ -1,4 +1,4 @@
-class StatBarChartWidget extends BarChartWidget{
+class StatBarChartWidget extends window.statistics_panel.widgets.bar_chart {
     constructor(id) {
         super(id);
         this.id = id;

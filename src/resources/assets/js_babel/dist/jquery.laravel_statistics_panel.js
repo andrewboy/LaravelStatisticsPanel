@@ -846,8 +846,8 @@ window.statistics_panel.widgets = function () {
 }();
 
 window.statistics_panel.stat_widgets = function ($) {
-    var StatGoalCompletionWidget = function (_GoalCompletionWidget) {
-        _inherits(StatGoalCompletionWidget, _GoalCompletionWidget);
+    var StatGoalCompletionWidget = function (_window$statistics_pa) {
+        _inherits(StatGoalCompletionWidget, _window$statistics_pa);
 
         function StatGoalCompletionWidget(id) {
             _classCallCheck(this, StatGoalCompletionWidget);
@@ -868,10 +868,10 @@ window.statistics_panel.stat_widgets = function ($) {
         }]);
 
         return StatGoalCompletionWidget;
-    }(GoalCompletionWidget);
+    }(window.statistics_panel.widgets.goal_completion);
 
-    var StatToplistWidget = function (_ToplistWidget) {
-        _inherits(StatToplistWidget, _ToplistWidget);
+    var StatToplistWidget = function (_window$statistics_pa2) {
+        _inherits(StatToplistWidget, _window$statistics_pa2);
 
         function StatToplistWidget(id) {
             _classCallCheck(this, StatToplistWidget);
@@ -890,10 +890,10 @@ window.statistics_panel.stat_widgets = function ($) {
         }]);
 
         return StatToplistWidget;
-    }(ToplistWidget);
+    }(window.statistics_panel.widgets.toplist);
 
-    var StatGridWidget = function (_GridWidget2) {
-        _inherits(StatGridWidget, _GridWidget2);
+    var StatGridWidget = function (_window$statistics_pa3) {
+        _inherits(StatGridWidget, _window$statistics_pa3);
 
         function StatGridWidget(id) {
             _classCallCheck(this, StatGridWidget);
@@ -912,10 +912,10 @@ window.statistics_panel.stat_widgets = function ($) {
         }]);
 
         return StatGridWidget;
-    }(GridWidget);
+    }(window.statistics_panel.widgets.grid);
 
-    var StatDoughnutChartWidget = function (_DoughnutChartWidget) {
-        _inherits(StatDoughnutChartWidget, _DoughnutChartWidget);
+    var StatDoughnutChartWidget = function (_window$statistics_pa4) {
+        _inherits(StatDoughnutChartWidget, _window$statistics_pa4);
 
         function StatDoughnutChartWidget(id) {
             _classCallCheck(this, StatDoughnutChartWidget);
@@ -934,10 +934,10 @@ window.statistics_panel.stat_widgets = function ($) {
         }]);
 
         return StatDoughnutChartWidget;
-    }(DoughnutChartWidget);
+    }(window.statistics_panel.widgets.doughnut_chart);
 
-    var StatMapToplistWidget = function (_MapToplistWidget) {
-        _inherits(StatMapToplistWidget, _MapToplistWidget);
+    var StatMapToplistWidget = function (_window$statistics_pa5) {
+        _inherits(StatMapToplistWidget, _window$statistics_pa5);
 
         function StatMapToplistWidget(id) {
             _classCallCheck(this, StatMapToplistWidget);
@@ -956,10 +956,10 @@ window.statistics_panel.stat_widgets = function ($) {
         }]);
 
         return StatMapToplistWidget;
-    }(MapToplistWidget);
+    }(window.statistics_panel.widgets.map_toplist);
 
-    var StatLineChartWidget = function (_LineChartWidget) {
-        _inherits(StatLineChartWidget, _LineChartWidget);
+    var StatLineChartWidget = function (_window$statistics_pa6) {
+        _inherits(StatLineChartWidget, _window$statistics_pa6);
 
         function StatLineChartWidget(id) {
             _classCallCheck(this, StatLineChartWidget);
@@ -978,7 +978,7 @@ window.statistics_panel.stat_widgets = function ($) {
         }]);
 
         return StatLineChartWidget;
-    }(LineChartWidget);
+    }(window.statistics_panel.widgets.line_chart);
 
     return {
         'goal_completion': StatGoalCompletionWidget,

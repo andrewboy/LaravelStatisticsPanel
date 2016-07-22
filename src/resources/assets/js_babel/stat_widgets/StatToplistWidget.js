@@ -1,4 +1,4 @@
-class StatToplistWidget extends ToplistWidget {
+class StatToplistWidget extends window.statistics_panel.widgets.toplist {
     constructor(id) {
         super(
             id,

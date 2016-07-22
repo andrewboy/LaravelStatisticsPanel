@@ -1,4 +1,4 @@
-class StatLineChartWidget extends LineChartWidget {
+class StatLineChartWidget extends window.statistics_panel.widgets.line_chart {
     constructor(id) {
         super(
             id,

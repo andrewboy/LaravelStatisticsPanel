@@ -1,4 +1,4 @@
-class StatDoughnutChartWidget extends DoughnutChartWidget {
+class StatDoughnutChartWidget extends window.statistics_panel.widgets.doughnut_chart {
     constructor(id){
         super(
             id,

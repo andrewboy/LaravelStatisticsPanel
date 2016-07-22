@@ -1,4 +1,4 @@
-class StatGoalCompletionWidget extends GoalCompletionWidget {
+class StatGoalCompletionWidget extends window.statistics_panel.widgets.goal_completion {
     constructor(id) {
         super(id);
     }

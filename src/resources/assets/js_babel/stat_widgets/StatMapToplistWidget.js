@@ -1,4 +1,4 @@
-class StatMapToplistWidget extends MapToplistWidget {
+class StatMapToplistWidget extends window.statistics_panel.widgets.map_toplist {
     constructor(id) {
         super(
             id,
