@@ -822,7 +822,8 @@ window.statistics_panel.widgets = function () {
         }, {
             key: "colorize",
             value: function colorize(data) {
-                var i, max;
+                var i = void 0,
+                    max = void 0;
 
                 for (i = 0, max = data.datasets.length; i < max; i += 1) {
                     data.datasets[i].fillColor = this.colors[i].fillColor;
@@ -1014,10 +1015,7 @@ window.statistics_panel.stat_widgets = function ($) {
         function StatBarChartWidget(id) {
             _classCallCheck(this, StatBarChartWidget);
 
-            var _this17 = _possibleConstructorReturn(this, Object.getPrototypeOf(StatBarChartWidget).call(this, id));
-
-            _this17.id = id;
-            return _this17;
+            return _possibleConstructorReturn(this, Object.getPrototypeOf(StatBarChartWidget).call(this, id, window.statistics_panel.config.chart_options.bar.colors, window.statistics_panel.config.chart_options.bar.options));
         }
 
         _createClass(StatBarChartWidget, [{

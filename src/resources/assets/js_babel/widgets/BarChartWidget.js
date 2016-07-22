@@ -11,7 +11,7 @@ class BarChartWidget extends ChartWidget {
     }
 
     colorize(data) {
-        var i, max;
+        let i, max;
 
         for (i = 0, max = data.datasets.length; i < max; i += 1) {
             data.datasets[i].fillColor = this.colors[i].fillColor;
