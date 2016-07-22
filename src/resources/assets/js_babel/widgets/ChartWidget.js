@@ -13,19 +13,19 @@ class ChartWidget extends Widget {
         return this.chart;
     }
 
-    set options(options) {
+    setOptions(options) {
         this.options = options;
     }
 
-    get options() {
+    getOptions() {
         return this.options;
     }
 
-    set colors(colors) {
+    setColors(colors) {
         this.colors = colors;
     }
 
-    get colors() {
+    getColors() {
         return this.colors;
     }
 }

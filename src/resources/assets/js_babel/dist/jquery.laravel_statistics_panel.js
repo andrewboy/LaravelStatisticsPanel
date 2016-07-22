@@ -383,19 +383,23 @@ window.statistics_panel.widgets = function () {
                 return this.chart;
             }
         }, {
-            key: "options",
-            set: function set(options) {
+            key: "setOptions",
+            value: function setOptions(options) {
                 this.options = options;
-            },
-            get: function get() {
+            }
+        }, {
+            key: "getOptions",
+            value: function getOptions() {
                 return this.options;
             }
         }, {
-            key: "colors",
-            set: function set(colors) {
+            key: "setColors",
+            value: function setColors(colors) {
                 this.colors = colors;
-            },
-            get: function get() {
+            }
+        }, {
+            key: "getColors",
+            value: function getColors() {
                 return this.colors;
             }
         }]);
