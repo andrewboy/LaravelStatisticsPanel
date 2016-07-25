@@ -7,6 +7,6 @@ gulp.task('default', () => {
 
     return gulp.src('src/resources/assets/js/jquery.laravel_statistics_panel.js')
     .pipe(include())
-    .pipe(babel())
+    .pipe(babel({"presets": ["es2015-script"]}))
     .pipe(gulp.dest('src/resources/assets/js/dist'));
 });

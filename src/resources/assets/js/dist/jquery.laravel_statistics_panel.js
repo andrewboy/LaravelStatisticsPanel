@@ -1259,33 +1259,27 @@ window.statistics_panel.boxes = function ($) {
 //jQuery wrapper
 
 (function ($, stat_panel) {
-    "use strict";
-
     $.fn.timeIndependentStatistics = function (url) {
-        if ($(undefined).length > 0) {
-            var stat = new stat_panel.boxes.time_independent($(undefined), url);
+        if ($(this).length > 0) {
+            var stat = new stat_panel.boxes.time_independent($(this), url);
             stat.init();
         }
     };
 })(jQuery, window.statistics_panel);
 
 (function ($, stat_panel) {
-    "use strict";
-
     $.fn.monthlyStatistics = function (url) {
-        if ($(undefined).length > 0) {
-            var stat = new stat_panel.boxes.monthly($(undefined), url);
+        if ($(this).length > 0) {
+            var stat = new stat_panel.boxes.monthly($(this), url);
             stat.init();
         }
     };
 })(jQuery, window.statistics_panel);
 
 (function ($, stat_panel) {
-    "use strict";
-
     $.fn.monthIntervalStatistics = function (url) {
-        if ($(undefined).length > 0) {
-            var stat = new stat_panel.boxes.month_interval($(undefined), url);
+        if ($(this).length > 0) {
+            var stat = new stat_panel.boxes.month_interval($(this), url);
             stat.init();
         }
     };
