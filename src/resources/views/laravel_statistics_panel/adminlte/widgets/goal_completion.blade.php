@@ -1,7 +1,7 @@
 <div id="{{ $id or '' }}"
     class="info-box {{ $class or 'bg-aqua' }}"
      {!! isset($attributes) ? implode(' ', array_map(function ($v, $k) { return $k . '="' . $v .'"'; }, $attributes, array_keys($attributes))) : null !!}
-     >
+ >
     <span class="info-box-icon">
         <i class="ion {{ $icon or '' }}"></i>
     </span>
