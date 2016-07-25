@@ -10,7 +10,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 window.statistics_panel = {};
 
-window.statistics_panel.config = function () {
+window.statistics_panel.config = function ($) {
     var colorPalette = [{
         color_name: 'light-blue',
         color: "#3c8dbc",
@@ -302,9 +302,9 @@ window.statistics_panel.config = function () {
         'color_palette': colorPalette,
         'chart_options': chartOptions
     };
-}();
+}(jQuery);
 
-window.statistics_panel.widgets = function () {
+window.statistics_panel.widgets = function ($) {
     var Widget = function () {
         function Widget(id) {
             _classCallCheck(this, Widget);
@@ -850,7 +850,7 @@ window.statistics_panel.widgets = function () {
         'map_toplist': MapToplistWidget,
         'bar_chart': BarChartWidget
     };
-}();
+}(jQuery);
 
 window.statistics_panel.stat_widgets = function ($) {
     var StatGoalCompletionWidget = function (_window$statistics_pa) {
@@ -1262,8 +1262,8 @@ window.statistics_panel.boxes = function ($) {
     "use strict";
 
     $.fn.timeIndependentStatistics = function (url) {
-        if ($(this).length > 0) {
-            var stat = new stat_panel.time_independent($(this), url);
+        if ($(undefined).length > 0) {
+            var stat = new stat_panel.boxes.time_independent($(undefined), url);
             stat.init();
         }
     };
@@ -1273,8 +1273,8 @@ window.statistics_panel.boxes = function ($) {
     "use strict";
 
     $.fn.monthlyStatistics = function (url) {
-        if ($(this).length > 0) {
-            var stat = new stat_panel.monthly($(this), url);
+        if ($(undefined).length > 0) {
+            var stat = new stat_panel.boxes.monthly($(undefined), url);
             stat.init();
         }
     };
@@ -1284,8 +1284,8 @@ window.statistics_panel.boxes = function ($) {
     "use strict";
 
     $.fn.monthIntervalStatistics = function (url) {
-        if ($(this).length > 0) {
-            var stat = new stat_panel.month_interval($(this), url);
+        if ($(undefined).length > 0) {
+            var stat = new stat_panel.boxes.month_interval($(undefined), url);
             stat.init();
         }
     };

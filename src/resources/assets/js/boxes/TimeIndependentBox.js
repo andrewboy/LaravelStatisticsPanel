@@ -1,23 +1,14 @@
-function TimeIndependentBox(context, source) {
-    StatisticsBox.apply(this, Array.prototype.slice.call(arguments));
+class TimeIndependentBox extends StatisticsBox {
+    boot() {
+        this.fetchDatas();
+    }
+
+    fetchDatas() {
+        this.setLoadIcons(true);
+
+        $.ajax({
+            type: 'GET',
+            url: this.source
+        }).done((data) => this.updateWidgets(data) );
+    }
 }
-
-//TimeIndependentBox.prototype = new StatisticsBox();
-TimeIndependentBox.inheritsFrom(StatisticsBox);
-
-TimeIndependentBox.prototype.boot = function () {
-    this.fetchDatas();
-};
-
-TimeIndependentBox.prototype.fetchDatas = function () {
-    var self = this;
-
-    this.setLoadIcons(true);
-
-    $.ajax({
-        type: 'GET',
-        url: self.source
-    }).done(function (data) {
-        self.updateWidgets(data);
-    });
-};

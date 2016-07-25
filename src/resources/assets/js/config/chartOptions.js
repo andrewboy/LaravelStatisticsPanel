@@ -1,4 +1,4 @@
-var chartOptions = {
+const chartOptions = {
     pie: {
         options: {
             //Boolean - Whether we should show a stroke on each segment
@@ -29,64 +29,64 @@ var chartOptions = {
         },
         colors: [
             {
-                color: widgetColorPalette[0].color,
-                highlight: widgetColorPalette[0].color,
-                color_name: widgetColorPalette[0].color_name
+                color: colorPalette[0].color,
+                highlight: colorPalette[0].color,
+                color_name: colorPalette[0].color_name
             },
             {
-                color: widgetColorPalette[1].color,
-                highlight: widgetColorPalette[1].color,
-                color_name: widgetColorPalette[1].color_name
+                color: colorPalette[1].color,
+                highlight: colorPalette[1].color,
+                color_name: colorPalette[1].color_name
             },
             {
-                color: widgetColorPalette[2].color,
-                highlight: widgetColorPalette[2].color,
-                color_name: widgetColorPalette[2].color_name
+                color: colorPalette[2].color,
+                highlight: colorPalette[2].color,
+                color_name: colorPalette[2].color_name
             },
             {
-                color: widgetColorPalette[3].color,
-                highlight: widgetColorPalette[3].color,
-                color_name: widgetColorPalette[3].color_name
+                color: colorPalette[3].color,
+                highlight: colorPalette[3].color,
+                color_name: colorPalette[3].color_name
             },
             {
-                color: widgetColorPalette[4].color,
-                highlight: widgetColorPalette[4].color,
-                color_name: widgetColorPalette[4].color_name
+                color: colorPalette[4].color,
+                highlight: colorPalette[4].color,
+                color_name: colorPalette[4].color_name
             },
             {
-                color: widgetColorPalette[5].color,
-                highlight: widgetColorPalette[5].color,
-                color_name: widgetColorPalette[5].color_name
+                color: colorPalette[5].color,
+                highlight: colorPalette[5].color,
+                color_name: colorPalette[5].color_name
             },
             {
-                color: widgetColorPalette[6].color,
-                highlight: widgetColorPalette[6].color,
-                color_name: widgetColorPalette[6].color_name
+                color: colorPalette[6].color,
+                highlight: colorPalette[6].color,
+                color_name: colorPalette[6].color_name
             },
             {
-                color: widgetColorPalette[7].color,
-                highlight: widgetColorPalette[7].color,
-                color_name: widgetColorPalette[7].color_name
+                color: colorPalette[7].color,
+                highlight: colorPalette[7].color,
+                color_name: colorPalette[7].color_name
             },
             {
-                color: widgetColorPalette[8].color,
-                highlight: widgetColorPalette[8].color,
-                color_name: widgetColorPalette[8].color_name
+                color: colorPalette[8].color,
+                highlight: colorPalette[8].color,
+                color_name: colorPalette[8].color_name
             },
             {
-                color: widgetColorPalette[9].color,
-                highlight: widgetColorPalette[9].color,
-                color_name: widgetColorPalette[9].color_name
+                color: colorPalette[9].color,
+                highlight: colorPalette[9].color,
+                color_name: colorPalette[9].color_name
             },
             {
-                color: widgetColorPalette[10].color,
-                highlight: widgetColorPalette[10].color,
-                color_name: widgetColorPalette[10].color_name
+                color: colorPalette[10].color,
+                highlight: colorPalette[10].color,
+                color_name: colorPalette[10].color_name
             },
             {
-                color: widgetColorPalette[11].color,
-                highlight: widgetColorPalette[11].color,
-                color_name: widgetColorPalette[11].color_name
+                color: colorPalette[11].color,
+                highlight: colorPalette[11].color,
+                color_name: colorPalette[11].color_name
             }
         ]
     },
@@ -122,107 +122,98 @@ var chartOptions = {
         },
         colors: [
             {
-                fillColor: widgetColorPalette[0].color,
-                strokeColor: widgetColorPalette[0].color,
-                pointColor: widgetColorPalette[0].color
+                fillColor: colorPalette[0].color,
+                strokeColor: colorPalette[0].color,
+                pointColor: colorPalette[0].color
             },
             {
-                fillColor: widgetColorPalette[1].color,
-                strokeColor: widgetColorPalette[1].color,
-                pointColor: widgetColorPalette[1].color
+                fillColor: colorPalette[1].color,
+                strokeColor: colorPalette[1].color,
+                pointColor: colorPalette[1].color
             },
             {
-                fillColor: widgetColorPalette[2].color,
-                strokeColor: widgetColorPalette[2].color,
-                pointColor: widgetColorPalette[2].color
+                fillColor: colorPalette[2].color,
+                strokeColor: colorPalette[2].color,
+                pointColor: colorPalette[2].color
             },
             {
-                fillColor: widgetColorPalette[3].color,
-                strokeColor: widgetColorPalette[3].color,
-                pointColor: widgetColorPalette[3].color
+                fillColor: colorPalette[3].color,
+                strokeColor: colorPalette[3].color,
+                pointColor: colorPalette[3].color
             },
             {
-                fillColor: widgetColorPalette[4].color,
-                strokeColor: widgetColorPalette[4].color,
-                pointColor: widgetColorPalette[4].color
+                fillColor: colorPalette[4].color,
+                strokeColor: colorPalette[4].color,
+                pointColor: colorPalette[4].color
             },
             {
-                fillColor: widgetColorPalette[5].color,
-                strokeColor: widgetColorPalette[5].color,
-                pointColor: widgetColorPalette[5].color
+                fillColor: colorPalette[5].color,
+                strokeColor: colorPalette[5].color,
+                pointColor: colorPalette[5].color
             },
             {
-                fillColor: widgetColorPalette[6].color,
-                strokeColor: widgetColorPalette[6].color,
-                pointColor: widgetColorPalette[6].color
+                fillColor: colorPalette[6].color,
+                strokeColor: colorPalette[6].color,
+                pointColor: colorPalette[6].color
             },
             {
-                fillColor: widgetColorPalette[7].color,
-                strokeColor: widgetColorPalette[7].color,
-                pointColor: widgetColorPalette[7].color
+                fillColor: colorPalette[7].color,
+                strokeColor: colorPalette[7].color,
+                pointColor: colorPalette[7].color
             },
             {
-                fillColor: widgetColorPalette[8].color,
-                strokeColor: widgetColorPalette[8].color,
-                pointColor: widgetColorPalette[8].color
+                fillColor: colorPalette[8].color,
+                strokeColor: colorPalette[8].color,
+                pointColor: colorPalette[8].color
             },
             {
-                fillColor: widgetColorPalette[9].color,
-                strokeColor: widgetColorPalette[9].color,
-                pointColor: widgetColorPalette[9].color
+                fillColor: colorPalette[9].color,
+                strokeColor: colorPalette[9].color,
+                pointColor: colorPalette[9].color
             },
             {
-                fillColor: widgetColorPalette[10].color,
-                strokeColor: widgetColorPalette[10].color,
-                pointColor: widgetColorPalette[10].color
+                fillColor: colorPalette[10].color,
+                strokeColor: colorPalette[10].color,
+                pointColor: colorPalette[10].color
             },
             {
-                fillColor: widgetColorPalette[11].color,
-                strokeColor: widgetColorPalette[11].color,
-                pointColor: widgetColorPalette[11].color
+                fillColor: colorPalette[11].color,
+                strokeColor: colorPalette[11].color,
+                pointColor: colorPalette[11].color
             }
         ]
     },
     toplist: {
         colors: [
             {
-                color_name: widgetColorPalette[3].color_name
+                color_name: colorPalette[3].color_name
             },
             {
-                color_name: widgetColorPalette[3].color_name
-//                color_name: widgetColorPalette[1].color_name
+                color_name: colorPalette[3].color_name
             },
             {
-                color_name: widgetColorPalette[3].color_name
-//                color_name: widgetColorPalette[2].color_name
+                color_name: colorPalette[3].color_name
             },
             {
-                color_name: widgetColorPalette[3].color_name
-//                color_name: widgetColorPalette[3].color_name
+                color_name: colorPalette[3].color_name
             },
             {
-                color_name: widgetColorPalette[3].color_name
-//                color_name: widgetColorPalette[4].color_name
+                color_name: colorPalette[3].color_name
             },
             {
-                color_name: widgetColorPalette[3].color_name
-//                color_name: widgetColorPalette[5].color_name
+                color_name: colorPalette[3].color_name
             },
             {
-                color_name: widgetColorPalette[3].color_name
-//                color_name: widgetColorPalette[6].color_name
+                color_name: colorPalette[3].color_name
             },
             {
-                color_name: widgetColorPalette[3].color_name
-//                color_name: widgetColorPalette[7].color_name
+                color_name: colorPalette[3].color_name
             },
             {
-                color_name: widgetColorPalette[3].color_name
-//                color_name: widgetColorPalette[8].color_name
+                color_name: colorPalette[3].color_name
             },
             {
-                color_name: widgetColorPalette[3].color_name
-//                color_name: widgetColorPalette[9].color_name
+                color_name: colorPalette[3].color_name
             }
         ]
     },
@@ -265,20 +256,20 @@ var chartOptions = {
         },
         colors: [
             {
-                fillColor: widgetColorPalette[0].color,
-                strokeColor: widgetColorPalette[0].color,
-                pointColor: widgetColorPalette[0].color,
+                fillColor: colorPalette[0].color,
+                strokeColor: colorPalette[0].color,
+                pointColor: colorPalette[0].color,
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
-                pointHighlightStroke: widgetColorPalette[0].color
+                pointHighlightStroke: colorPalette[0].color
             },
             {
-                fillColor: widgetColorPalette[1].color,
-                strokeColor: widgetColorPalette[1].color,
-                pointColor: widgetColorPalette[1].color,
+                fillColor: colorPalette[1].color,
+                strokeColor: colorPalette[1].color,
+                pointColor: colorPalette[1].color,
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
-                pointHighlightStroke: widgetColorPalette[1].color
+                pointHighlightStroke: colorPalette[1].color
             }
         ]
     }

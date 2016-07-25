@@ -1,13 +1,9 @@
-function BoxWidget() {
-    Widget.apply(this, Array.prototype.slice.call(arguments));
+class BoxWidget extends Widget {
+    getValue() {
+        return $('.value', this.id);
+    }
+
+    setValue(value) {
+        this.getValue().html(value);
+    }
 }
-
-BoxWidget.prototype = new Widget();
-
-BoxWidget.prototype.getValue = function() {
-    return $('.value', this.id);
-};
-
-BoxWidget.prototype.setValue = function(value) {
-    this.getValue().html(value);
-};

@@ -1,15 +1,17 @@
-function StatBarChartWidget (id) {
-    this.id = id;
+class StatBarChartWidget extends window.statistics_panel.widgets.bar_chart {
+    constructor(id) {
+        super(
+            id,
+            window.statistics_panel.config.chart_options.bar.colors,
+            window.statistics_panel.config.chart_options.bar.options
+        );
+    }
 
-    window.statistics_panel.widgets.bar_chart.apply(this, Array.prototype.slice.call(arguments));
+    init() {
+
+    }
+
+    update(data) {
+        this.setDiagram(data);
+    }
 }
-
-StatBarChartWidget.prototype = new  window.statistics_panel.widgets.bar_chart();
-
-StatGoalCompletionWidget.prototype.init = function () {
-
-};
-
-StatGoalCompletionWidget.prototype.update = function (data) {
-    this.setDiagram(data);
-};

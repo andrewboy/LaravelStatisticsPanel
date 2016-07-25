@@ -1,59 +1,48 @@
-function StatisticsBox(context, source) {
-    this.context = context;
-    this.source = source;
-}
+class StatisticsBox {
+    constructor(context, source) {
+        this.context = context;
+        this.source = source;
+    }
 
-StatisticsBox.prototype.init = function () {
-    var obj = this;
-    $('.stat-widget', this.context).each(function (i, item) {
-        obj.setWidget($(item));
-    });
+    init() {
+        $('.stat-widget', this.context).each( (i, item) => this.setWidget($(item) ));
+        this.boot();
+    }
 
-    this.boot();
-};
+    boot() {
+        this.fetchDatas();
+    }
 
-StatisticsBox.prototype.boot = function () {
-    this.fetchDatas();
-};
+    setLoadIcons(isLoading) {
+        $('.stat-widget', this.context).each((i, item) => $(item).data('widget').setLoadIcon(isLoading) );
+    }
 
-StatisticsBox.prototype.setLoadIcons = function (isLoading) {
-    $('.stat-widget', this.context).each(function (i, item) {
-        $(item).data('widget').setLoadIcon(isLoading);
-    });
-};
+    updateWidgets(data) {
+        var id, statWidgets = $('.stat-widget', this.context);
 
-StatisticsBox.prototype.updateWidgets = function (data) {
-    var id,
-        statWidgets = $('.stat-widget', this.context);
+        for (id in data) {
+            var $stat = statWidgets.filter('[data-stat-id="' + id + '"]');
 
-    for (id in data) {
-        var $stat = statWidgets.filter('[data-stat-id="' + id + '"]');
-
-        if ($stat.length > 0) {
-            $stat.data('widget').update(data[id]);
-            $stat.data('widget').setLoadIcon(false);
+            if ($stat.length > 0) {
+                $stat.data('widget').update(data[id]);
+                $stat.data('widget').setLoadIcon(false);
+            }
         }
     }
-};
 
-StatisticsBox.prototype.setWidget = function ($item) {
-    var id = $item.data('statId');
+    setWidget($item) {
+        var widget = new window.statistics_panel.stat_widgets[$item.data('type')]($item);
+        widget.init($item);
 
-    var widget = new window.statistics_panel.stat_widgets[$item.data('type')]($item);
-    widget.init($item);
+        $item.data('widget', widget);
+    }
 
-    $item.data('widget', widget);
-};
+    fetchDatas() {
+        this.setLoadIcons(true);
 
-StatisticsBox.prototype.fetchDatas = function () {
-    var self = this;
-
-    this.setLoadIcons(true);
-
-    $.ajax({
-        type: 'GET',
-        url: self.source
-    }).done(function (data) {
-        self.updateWidgets(data);
-    });
-};
+        $.ajax({
+            type: 'GET',
+            url: this.source
+        }).done((data) => this.updateWidgets(data) );
+    }
+}

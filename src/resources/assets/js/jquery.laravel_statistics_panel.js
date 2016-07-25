@@ -1,21 +1,6 @@
-Function.prototype.inheritsFrom = function( parentClassOrObject ){
-    if ( parentClassOrObject.constructor == Function ){
-        //Normal Inheritance
-        this.prototype = new parentClassOrObject;
-        this.prototype.constructor = this;
-        this.prototype.parent = parentClassOrObject.prototype;
-    } else {
-        //Pure Virtual Inheritance
-        this.prototype = parentClassOrObject;
-        this.prototype.constructor = this;
-        this.prototype.parent = parentClassOrObject;
-    }
-    return this;
-};
-
 window.statistics_panel = {};
 
-window.statistics_panel.config = (function() {
+window.statistics_panel.config = (($) => {
     //=require config/colorPalette.js
     //=require config/chartOptions.js
 
@@ -23,9 +8,9 @@ window.statistics_panel.config = (function() {
         'color_palette': colorPalette,
         'chart_options': chartOptions
     };
-}());
+})(jQuery);
 
-window.statistics_panel.widgets = (function () {
+window.statistics_panel.widgets = (($) => {
     //=require widgets/Widget.js
     //=require widgets/ChartWidget.js
     //=require widgets/GridWidget.js
@@ -49,16 +34,17 @@ window.statistics_panel.widgets = (function () {
         'map_toplist': MapToplistWidget,
         'bar_chart': BarChartWidget
     };
-}());
+})(jQuery);
 
-
-window.statistics_panel.stat_widgets = (function ($) {
+window.statistics_panel.stat_widgets = (($) => {
     //=require stat_widgets/StatGoalCompletionWidget.js
     //=require stat_widgets/StatToplistWidget.js
     //=require stat_widgets/StatGridWidget.js
     //=require stat_widgets/StatDoughnutChartWidget.js
     //=require stat_widgets/StatMapToplistWidget.js
     //=require stat_widgets/StatLineChartWidget.js
+    //=require stat_widgets/StatBoxWidget.js
+    //=require stat_widgets/StatBarChartWidget.js
 
     return {
         'goal_completion': StatGoalCompletionWidget,
@@ -66,15 +52,13 @@ window.statistics_panel.stat_widgets = (function ($) {
         'grid': StatGridWidget,
         'doughnut_chart': StatDoughnutChartWidget,
         'map_toplist': StatMapToplistWidget,
-        'line_chart': StatLineChartWidget
+        'line_chart': StatLineChartWidget,
+        'box': StatBoxWidget,
+        'bar_chart': StatBarChartWidget
     };
-}(jQuery));
+})(jQuery);
 
-//window.statistics_panel.widgets.extend = function (modules) {
-//    $.extend(statistics_panel.widgets, modules);
-//};
-
-window.statistics_panel.boxes = (function ($) {
+window.statistics_panel.boxes = (($) => {
     //=require boxes/StatisticsBox.js
     //=require boxes/TimeIndependentBox.js
     //=require boxes/MonthlyBox.js
@@ -86,4 +70,39 @@ window.statistics_panel.boxes = (function ($) {
         'monthly': MonthlyBox,
         'month_interval': MonthIntervalBox
     };
-}(jQuery));
+})(jQuery);
+
+//jQuery wrapper
+
+(($, stat_panel) => {
+    "use strict";
+
+    $.fn.timeIndependentStatistics = (url) => {
+        if ($(this).length > 0) {
+            var stat = new stat_panel.boxes.time_independent($(this), url);
+            stat.init();
+        }
+    };
+})(jQuery, window.statistics_panel);
+
+(($, stat_panel) => {
+    "use strict";
+
+    $.fn.monthlyStatistics = (url) => {
+        if ($(this).length > 0) {
+            var stat = new stat_panel.boxes.monthly($(this), url);
+            stat.init();
+        }
+    };
+})(jQuery, window.statistics_panel);
+
+(($, stat_panel) => {
+    "use strict";
+
+    $.fn.monthIntervalStatistics = (url) => {
+        if ($(this).length > 0) {
+            var stat = new stat_panel.boxes.month_interval($(this), url);
+            stat.init();
+        }
+    };
+})(jQuery, window.statistics_panel);

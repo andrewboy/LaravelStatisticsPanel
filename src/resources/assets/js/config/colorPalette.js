@@ -1,4 +1,4 @@
-var colorPalette = [
+const colorPalette = [
     {
         color_name: 'light-blue',
         color: "#3c8dbc",

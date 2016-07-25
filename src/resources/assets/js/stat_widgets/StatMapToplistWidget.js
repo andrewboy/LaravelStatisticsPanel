@@ -1,15 +1,14 @@
-function StatMapToplistWidget(id) {
-    this.id = id;
+class StatMapToplistWidget extends window.statistics_panel.widgets.map_toplist {
+    constructor(id) {
+        super(
+            id,
+            window.statistics_panel.config.chart_options.toplist.colors
+        );
+    }
 
-    window.statistics_panel.widgets.map_toplist.apply(this, [id, window.statistics_panel.config.chart_options.toplist.colors]);
+    init() {}
+
+    update(data) {
+        this.setMultiMap(data);
+    }
 }
-
-StatMapToplistWidget.prototype = new window.statistics_panel.widgets.map_toplist();
-
-StatMapToplistWidget.prototype.init = function () {
-
-};
-
-StatMapToplistWidget.prototype.update = function (data) {
-    this.setMultiMap(data);
-};

@@ -1,15 +1,11 @@
-function StatGridWidget(id) {
-    this.id = id;
+class StatGridWidget extends window.statistics_panel.widgets.grid {
+    constructor(id) {
+        super(id);
+    }
 
-    window.statistics_panel.widgets.grid.apply(this, [id]);
+    init() {}
+
+    update(data) {
+        this.setGrid(data);
+    }
 }
-
-StatGridWidget.prototype = new window.statistics_panel.widgets.grid();
-
-StatGridWidget.prototype.init = function () {
-
-};
-
-StatGridWidget.prototype.update = function (data) {
-    this.setGrid(data);
-};

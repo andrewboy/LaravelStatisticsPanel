@@ -1,29 +1,32 @@
-function ChartWidget(id, colors, options) {
-    Widget.apply(this, Array.prototype.slice.call(arguments));
+class ChartWidget extends Widget {
+    constructor(id, colors, options) {
+        super(id);
+        this.chart = null;
+        this.colors = colors;
+        this.options = options;
+    }
 
-    this.chart = null;
-    this.options = options;
-    this.colors = colors;
+    getDiagram() {
+        return $('.diagram', this.id);
+    }
+
+    getChart() {
+        return this.chart;
+    }
+
+    setOptions(options) {
+        this.options = options;
+    }
+
+    getOptions() {
+        return this.options;
+    }
+
+    setColors(colors) {
+        this.colors = colors;
+    }
+
+    getColors() {
+        return this.colors;
+    }
 }
-
-ChartWidget.prototype = new Widget();
-
-ChartWidget.prototype.getDiagram = function () {
-    return $('.diagram', this.id);
-};
-
-ChartWidget.prototype.getChart = function () {
-    return this.chart;
-};
-
-ChartWidget.prototype.setOptions = function (options) {
-    this.options = options;
-};
-
-ChartWidget.prototype.getOptions = function () {
-    return this.options;
-};
-
-ChartWidget.prototype.setColors = function (colorSettings) {
-    this.colors = colorSettings;
-};

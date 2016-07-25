@@ -1,10 +1,10 @@
-function MapToplistWidget(id, options) {
-    GridWidget.apply(this, Array.prototype.slice.call(arguments));
+class MapToplistWidget extends GridWidget {
+    constructor(id, options) {
+        super(id);
+        this.markerClusterer = null;
+        var settings = $.extend({}, {}, options || {});
 
-    this.markerClusterer = null;
-    var settings = $.extend({}, {}, options || {});
-
-    var mapStyle = [{
+        var mapStyle = [{
             "featureType":"landscape",
             "stylers":[
                 {"saturation":-100},
@@ -67,70 +67,69 @@ function MapToplistWidget(id, options) {
             ]
         }];
 
-    var mapOptions = {
-        zoom: 6,
-        center: new google.maps.LatLng(47.5011151657, 19.0531965145),
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        styles: mapStyle
-    };
+        var mapOptions = {
+            zoom: 6,
+            center: new google.maps.LatLng(47.5011151657, 19.0531965145),
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            styles: mapStyle
+        };
 
-    this.map = new google.maps.Map($('.map', this.id)[0], mapOptions);
-}
-
-MapToplistWidget.prototype = new GridWidget();
-
-MapToplistWidget.prototype.getGridBody = function () {
-    return $('.toplist', this.id);
-};
-
-MapToplistWidget.prototype.setMultiMap = function (data) {
-    var i,
-        max,
-        markers = [];
-
-    if (this.markerClusterer) {
-        this.markerClusterer.clearMarkers();
+        this.map = new google.maps.Map($('.map', this.id)[0], mapOptions);
     }
 
-    if (data.map) {
-        for (i = 0, max = data.map.length; i < max; i += 1) {
-            var latLng = new google.maps.LatLng(data.map[i].lat, data.map[i].lng);
-            var marker = new google.maps.Marker({
-                position: latLng,
-                title: data.map[i].name +': '+ data.map[i].value,
-            });
+    getGridBody() {
+        return $('.toplist', this.id);
+    }
 
-            markers.push(marker);
+    setMultiMap(data) {
+        let i,
+            max,
+            markers = [];
+
+        if (this.markerClusterer) {
+            this.markerClusterer.clearMarkers();
         }
 
-        this.markerClusterer = new MarkerClusterer(this.map, markers, {imagePath: '/images/vendor/js-marker-clusterer/m'});
+        if (data.map) {
+            for (i = 0, max = data.map.length; i < max; i += 1) {
+                var latLng = new google.maps.LatLng(data.map[i].lat, data.map[i].lng);
+                var marker = new google.maps.Marker({
+                    position: latLng,
+                    title: data.map[i].name +': '+ data.map[i].value,
+                });
 
-        this.markerClusterer.setCalculator(function(markers, numStyles) {
-            var val = 0,
-                index = 0,
-                dv;
-
-            for (var m = 0, max = markers.length; m < max; m++) {
-                val += Number(markers[m].getTitle().match(/(\d+)$/g)[0]);
+                markers.push(marker);
             }
 
-            dv = val;
+            this.markerClusterer = new MarkerClusterer(this.map, markers, {imagePath: '/images/vendor/js-marker-clusterer/m'});
 
-            while (dv !== 0) {
-                dv = parseInt(dv / 10, 10);
-                index++;
-            }
+            this.markerClusterer.setCalculator(function(markers, numStyles) {
+                var val = 0,
+                    index = 0,
+                    dv;
 
-            index = Math.min(index, numStyles);
+                for (var m = 0, max = markers.length; m < max; m++) {
+                    val += Number(markers[m].getTitle().match(/(\d+)$/g)[0]);
+                }
 
-            return {
-                text: val,
-                index: index
-            };
-        });
+                dv = val;
+
+                while (dv !== 0) {
+                    dv = parseInt(dv / 10, 10);
+                    index++;
+                }
+
+                index = Math.min(index, numStyles);
+
+                return {
+                    text: val,
+                    index: index
+                };
+            });
+        }
+
+        if (data.toplist) {
+            this.setGrid(data.toplist);
+        }
     }
-
-    if (data.toplist) {
-        this.setGrid(data.toplist);
-    }
-};
+}
