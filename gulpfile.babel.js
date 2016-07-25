@@ -1,13 +1,6 @@
 import gulp from 'gulp';
 import include from 'gulp-include';
-//import concat from 'gulp-concat';
-//import uglify from 'gulp-uglify';
-//import rename from 'gulp-rename';
 import babel from 'gulp-babel';
-//import browserify from 'browserify';
-//import source from 'vinyl-source-stream';
-//import buffer from 'vinyl-buffer';
-//import del from 'del';
 
 gulp.task('default', () => {
     console.log('-- gulp is running task: scripts');
