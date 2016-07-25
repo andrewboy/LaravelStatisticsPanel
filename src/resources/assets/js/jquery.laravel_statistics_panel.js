@@ -77,7 +77,7 @@ window.statistics_panel.boxes = (($) => {
 (($, stat_panel) => {
     $.fn.timeIndependentStatistics = function(url) {
         if ($(this).length > 0) {
-            var stat = new stat_panel.boxes.time_independent($(this), url);
+            let stat = new stat_panel.boxes.time_independent($(this), url);
             stat.init();
         }
     };
@@ -86,7 +86,7 @@ window.statistics_panel.boxes = (($) => {
 (($, stat_panel) => {
     $.fn.monthlyStatistics = function(url) {
         if ($(this).length > 0) {
-            var stat = new stat_panel.boxes.monthly($(this), url);
+            let stat = new stat_panel.boxes.monthly($(this), url);
             stat.init();
         }
     };
@@ -95,7 +95,7 @@ window.statistics_panel.boxes = (($) => {
 (($, stat_panel) => {
     $.fn.monthIntervalStatistics = function(url) {
         if ($(this).length > 0) {
-            var stat = new stat_panel.boxes.month_interval($(this), url);
+            let stat = new stat_panel.boxes.month_interval($(this), url);
             stat.init();
         }
     };
