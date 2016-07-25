@@ -67,7 +67,7 @@ class LaravelStatisticsPanelServiceProvider extends ServiceProvider
         #TRANSLATIONS
         $this->loadTranslationsFrom(
             $resourcesDir.'/lang/',
-            'google-analytics-statistics'
+            'laravel-statistics-panel'
         );
         $this->publishes(
             [
