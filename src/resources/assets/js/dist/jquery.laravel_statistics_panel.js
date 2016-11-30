@@ -325,7 +325,7 @@ window.statistics_panel.widgets = function ($) {
         }, {
             key: "getFooter",
             value: function getFooter() {
-                return $('footer', this.id);
+                return $('.footer', this.id);
             }
         }, {
             key: "setFooter",

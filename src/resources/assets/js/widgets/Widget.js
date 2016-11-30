@@ -12,7 +12,7 @@ class Widget {
     }
 
     getFooter() {
-        return $('footer', this.id);
+        return $('.footer', this.id);
     }
 
     setFooter(text) {
