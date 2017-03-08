@@ -7,6 +7,13 @@
     </span>
 
     <div class="info-box-content">
+        @if(!empty($buttons))
+            @foreach($buttons as $button)
+                <a href="{{ $button['url'] }}" class="btn btn-primary pull-right {{ isset($button['classes']) ? $button['classes'] : '' }}">
+                    <i class="{{ isset($button['icon_classes']) ? $button['icon_classes'] : 'fa fa-plus' }}"></i>
+                </a>
+            @endforeach
+        @endif
         <span class="info-box-text title">{{ $title or '' }}</span>
         <span class="info-box-number value">{{ $number or '&nbsp;' }}</span>
 
