@@ -9,7 +9,11 @@
     <div class="info-box-content">
         @if(!empty($buttons))
             @foreach($buttons as $button)
-                <a href="{{ $button['url'] }}" class="btn btn-primary pull-right {{ isset($button['classes']) ? $button['classes'] : '' }}">
+                <a href="{{ $button['url'] }}"
+                   class="btn btn-primary pull-right {{ isset($button['classes']) ? $button['classes'] : '' }}"
+                   {{ isset($target) ? 'target="'. $target .'"' : '' }}
+                    {{ isset($title) ? 'title="'. $title .'"' : '' }}
+                >
                     <i class="{{ isset($button['icon_classes']) ? $button['icon_classes'] : 'fa fa-plus' }}"></i>
                 </a>
             @endforeach
